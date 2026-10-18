@@ -1,0 +1,105 @@
+name: Release
+
+# Publishes from a tag, never from a branch:
+#
+#   v1.2.3        -> Maven Central: the parent, guardiano3-sdk and
+#                    guardiano3-sdk-core at 1.2.3, signed, published
+#   v1.2.3-rc.N   -> the rehearsal: the same signed upload, stopped at
+#                    validation. Central checks it (signatures, sources,
+#                    javadoc, pom metadata) and holds it unpublished; drop it in
+#                    the Central Portal under Deployments
+#
+# Credentials, all secrets of the `release` environment (which only accepts
+# runs from v* tags): MAVEN_CENTRAL_USERNAME / MAVEN_CENTRAL_PASSWORD (a Central
+# Portal user token), MAVEN_GPG_PRIVATE_KEY (armored) and MAVEN_GPG_PASSPHRASE.
+#
+# To release: set the version in the three poms (mvn versions:set
+# -DnewVersion=<x.y.z> -DgenerateBackupPoms=false, then ./scripts/generate.sh)
+# and the CHANGELOG heading through a reviewed pull request, then tag the merge
+# commit. All four SDKs are released together, at the same version.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    # The same gates as a pull request, against exactly the tagged commit.
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    needs: ci
+    runs-on: ubuntu-latest
+    environment: release
+    outputs:
+      final: ${{ steps.version.outputs.final }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The tag matches the version
+        id: version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          declared="$(sed -n '/<artifactId>guardiano3-sdk-parent<\/artifactId>/{n;s/.*<version>\(.*\)<\/version>.*/\1/p;}' pom.xml)"
+          case "$TAG" in
+            "v${declared}")      echo "final=true"  >> "$GITHUB_OUTPUT" ;;
+            "v${declared}-rc."*) echo "final=false" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::tag $TAG does not match version ${declared} in pom.xml"
+              exit 1 ;;
+          esac
+          echo "version=${declared}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+          # Writes settings.xml with the Central credentials read from the
+          # environment variables named here, and imports the signing key.
+          server-id: central
+          server-username: MAVEN_CENTRAL_USERNAME
+          server-password: MAVEN_CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Sign and upload to Maven Central
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          FINAL: ${{ steps.version.outputs.final }}
+        run: |
+          if [ "$FINAL" = "true" ]; then
+            mvn -B -ntp -Prelease -DskipTests deploy
+          else
+            mvn -B -ntp -Prelease -DskipTests deploy \
+              -Dcentral.autoPublish=false -Dcentral.waitUntil=validated
+          fi
+
+  github-release:
+    # Real releases only: a GitHub release whose notes are the CHANGELOG entry.
+    needs: publish
+    if: needs.publish.outputs.final == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ needs.publish.outputs.version }}
+        run: |
+          awk -v v="$VERSION" '
+            $0 ~ "^## " v "([ (]|$)" { on = 1; next }
+            on && /^## / { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          [ -s notes.md ] || echo "See CHANGELOG.md." > notes.md
+          gh release create "$TAG" --verify-tag --title "$TAG" --notes-file notes.md
