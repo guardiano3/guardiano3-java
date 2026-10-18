@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Aggregator for the Java SDK.
+
+  Two modules, for the same reason the Python and TypeScript SDKs have two
+  directories: `generated` is rebuilt from openapi/v1.json by
+  scripts/generate.sh and must never be hand-edited (the CI drift gate
+  fails a pull request that does), while `core` is the hand-written half the
+  generator cannot produce — typed errors, retries, idempotency, pagination.
+
+  `core` depends on `generated` as an ordinary Maven artifact rather than by
+  adding a second source root to the generated pom. Editing that pom would put
+  hand-written configuration inside a file the generator overwrites, which is
+  the drift the whole arrangement exists to avoid.
+
+  Build and test both:  mvn test
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.guardiano3</groupId>
+  <artifactId>guardiano3-sdk-parent</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+  <name>GuardianO3 Java SDK</name>
+  <description>Official Java client for the GuardianO3 fraud-intelligence API.</description>
+  <url>https://github.com/guardiano3/guardiano3-java</url>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>GuardianO3</name>
+      <email>support@guardiano3.com</email>
+      <organization>Proneuronet Solutions Private Limited</organization>
+      <organizationUrl>https://guardiano3.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/guardiano3/guardiano3-java.git</connection>
+    <developerConnection>scm:git:https://github.com/guardiano3/guardiano3-java.git</developerConnection>
+    <url>https://github.com/guardiano3/guardiano3-java</url>
+  </scm>
+
+  <modules>
+    <module>generated</module>
+    <module>core</module>
+  </modules>
+
+  <properties>
+    <!-- Overridden by release.yml: a rehearsal uploads to Maven Central and
+         stops at validation, so the deployment can be dropped unpublished. -->
+    <central.autoPublish>true</central.autoPublish>
+    <central.waitUntil>published</central.waitUntil>
+  </properties>
+
+  <profiles>
+    <!-- `mvn -Prelease deploy`: sign every artifact and upload the parent,
+         generated and core modules to Maven Central as one deployment. Used
+         only by release.yml, from a tag. -->
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.8</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <!-- The passphrase comes from MAVEN_GPG_PASSPHRASE; loopback
+                       stops gpg from asking for it on a terminal CI lacks. -->
+                  <gpgArguments>
+                    <arg>--pinentry-mode</arg>
+                    <arg>loopback</arg>
+                  </gpgArguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.12.0</version>
+            <extensions>true</extensions>
+            <configuration>
+              <publishingServerId>central</publishingServerId>
+              <autoPublish>${central.autoPublish}</autoPublish>
+              <waitUntil>${central.waitUntil}</waitUntil>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
