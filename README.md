@@ -5,7 +5,7 @@
 
 The official Java client for the [GuardianO3](https://guardiano3.com) API:
 real-time fraud intelligence for phone calls. Send a transcript, an audio clip
-or a live call, and get a risk decision back.
+or stream live audio, and get a risk decision back.
 
 You need an API key from the developer console at
 [guardiano3.com](https://guardiano3.com).
@@ -179,7 +179,7 @@ and a client that builds its own breaks the moment the sort key changes.
 
 ## WebSocket / Live Sessions
 
-`LiveSession` manages the two WebSocket channels for real-time call
+`LiveSession` manages the two WebSocket channels for real-time session
 analysis: binary audio uplink and typed JSON decision downlink. It uses
 OkHttp's built-in WebSocket support, handles authentication, frame parsing,
 and connection lifecycle.
@@ -234,7 +234,7 @@ live.close();
 | `onDecision` | `decision` | Scored chunk; `pending` verification means an update follows |
 | `onDecisionUpdate` | `decisionUpdate` | Final decision for a chunk first sent as `pending`; replace it in place |
 | `onLagging` | `lagging` | Audio arriving faster than transcription can process |
-| `onDegraded` | `degraded` | Part of the call was not transcribed; no decision covers it. Not fatal: do not read a quiet stream as a safe call |
+| `onDegraded` | `degraded` | Part of the audio was not analysed; no decision covers it. Not fatal: do not read a quiet stream as a safe session |
 | `onError` | `error` | Fatal; server closes after sending |
 | `onDisconnect` | — | Either WebSocket closed or failed |
 
@@ -264,4 +264,4 @@ The licence covers this SDK's source code. Using the GuardianO3 API requires an
 API key and acceptance of the [Terms of Service](https://guardiano3.com/terms).
 
 Security issues: see [SECURITY](https://github.com/guardiano3/.github/blob/main/SECURITY.md).
-Never put API keys, call audio or transcripts in an issue.
+Never put API keys, session audio or transcripts in an issue.
