@@ -47,7 +47,7 @@ import java.util.Set;
 import com.guardiano3.generated.JSON;
 
 /**
- * Confirmation for an irreversible deletion.  &#x60;currentPassword&#x60; is optional in the schema and required in practice for any account that has one -- an OAuth-only account has no password to check, and a schema-level &#x60;required&#x60; would make the request impossible to satisfy for those users. The server decides; see &#x60;IdentityService.delete_account&#x60;.  &#x60;confirm&#x60; must be the literal string &#x60;DELETE&#x60;. It is not security -- anyone who can send the password can send the word -- it is there so that a mis-wired client cannot delete an account by calling the wrong endpoint with an empty body.
+ * Confirmation for an irreversible deletion.  &#x60;currentPassword&#x60; is required for an account that has a password. An account that has only ever signed in with a provider has no password to check, and omits it.  &#x60;confirm&#x60; must be the literal string &#x60;DELETE&#x60;. It is not security -- anyone who can send the password can send the word -- it is there so that a mis-wired client cannot delete an account by calling the wrong endpoint with an empty body.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.15.0")
 public class AccountDeleteRequest {

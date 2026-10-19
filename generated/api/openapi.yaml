@@ -120,9 +120,9 @@ paths:
   /v1/analyze/audio:
     post:
       description: |-
-        Requires the `analysis:write` scope. Uploads are capped at `ANALYZE_MAX_UPLOAD_BYTES` and must carry an audio content type. Clips longer than `ANALYZE_MAX_AUDIO_SECONDS` (120 s by default) are refused with `413`, not truncated -- send the part of the audio to be scored, or stream live audio over the session WebSockets in real time. WAV, MP3, FLAC, OGG, MP4/M4A and WebM are decoded and resampled server-side; a file that cannot be decoded is refused with `415`. If transcription fails the response is `502` (or `504` on a timeout) -- never a low-risk verdict on audio that was not heard.
+        Requires the `analysis:write` scope. Uploads must carry an audio content type. Uploads larger than 25 MiB and clips longer than 120 seconds are refused with `413`, not truncated -- send the part of the audio to be scored, or stream live audio over the session WebSockets in real time. WAV, MP3, FLAC, OGG, MP4/M4A and WebM are decoded and resampled server-side; a file that cannot be decoded is refused with `415`. If transcription fails the response is `502` (or `504` on a timeout) -- never a low-risk verdict on audio that was not heard.
 
-        `Idempotency-Key` is **not** supported here: fingerprinting the payload would mean holding and hashing the whole upload a second time, which doubles the memory cost of the largest request the API accepts. Retry safety for audio comes from the request being stateless -- the audio is not persisted, so a duplicate costs a re-analysis (and counts as a second analysis in analytics), not a duplicate record of the audio.
+        `Idempotency-Key` is **not** supported here. Retrying is safe: the audio is not stored, so a duplicate request is analysed again (and counts as a second analysis in analytics) without creating a duplicate record of the audio.
       operationId: analyze_audio_v1_analyze_audio_post
       requestBody:
         content:
@@ -3779,10 +3779,9 @@ components:
       description: |-
         Confirmation for an irreversible deletion.
 
-        `currentPassword` is optional in the schema and required in practice for any
-        account that has one -- an OAuth-only account has no password to check, and
-        a schema-level `required` would make the request impossible to satisfy for
-        those users. The server decides; see `IdentityService.delete_account`.
+        `currentPassword` is required for an account that has a password. An
+        account that has only ever signed in with a provider has no password to
+        check, and omits it.
 
         `confirm` must be the literal string `DELETE`. It is not security -- anyone
         who can send the password can send the word -- it is there so that a
@@ -4259,13 +4258,7 @@ components:
       - token
       title: AuthFrame
     AuthSessionResponse:
-      description: |-
-        A signed-in session (a device), not an analysis session.
-
-        Named to disambiguate from `product.SessionResponse`, which is an analysis
-        session. Two Pydantic classes sharing a name is invisible on the server but
-        produces `SchemasV1AuthSessionResponse` as a generated SDK type -- the
-        contract's names are part of its public surface.
+      description: "A signed-in session (a device), not an analysis session (`SessionResponse`)."
       example:
         createdAt: 2000-01-23T04:56:07.000+00:00
         current: false
@@ -5167,20 +5160,8 @@ components:
       description: |-
         A PATCH: omit a field to leave it alone. `null` is not a way to clear one.
 
-        Both fields were nullable and both crashed the endpoint with a 500 —
-        `{"name": null}` violated the column's NOT NULL on commit, and
-        `{"settings": null}` made the service iterate a `None`. Any authenticated
-        caller could do it, and the contract said both were acceptable.
-
-        Rejecting an explicit null turns those into the 422 the contract already
-        declares. Nothing is lost: neither field has a meaningful empty state — you
-        cannot have no name, and "no settings" is not a setting. `exclude_unset` in
-        the handler is what still distinguishes "not supplied" from "supplied", so
-        omission continues to mean "leave it alone".
-
-        Found by `tests/integration/test_contract_conformance.py`, which generates
-        exactly this kind of payload and is why property-based testing earns its
-        place next to hand-written cases.
+        An explicit `null` is refused with `422`. Neither field has an empty state:
+        an account always has a name, and "no settings" is not a setting.
       example:
         settings:
           privacyModeEnabled: true
@@ -5768,8 +5749,8 @@ components:
       - status
       title: VoiceAuthenticity
     WebSessionResponse:
-      description: Browser login response (ADR-018). No refresh token — it travels
-        in a cookie.
+      description: Browser sign-in response. No refresh token in the body — it is
+        set as a cookie.
       example:
         expiresIn: 0
         accessToken: accessToken
@@ -5886,9 +5867,9 @@ components:
             $ref: "#/components/schemas/Error_error_details_inner"
           type: array
         docsUrl:
-          description: Deep link to the error-code entry in the published errors reference.
-            Present only when the deployment has `ERROR_DOCS_BASE_URL` configured;
-            omitted otherwise rather than sent blank.
+          description: "Deep link to the error-code entry in the published errors\
+            \ reference. Omitted, rather than sent blank, when there is no entry to\
+            \ link to."
           example: https://guardiano3.com/docs/errors#not_found
           type: string
         message:

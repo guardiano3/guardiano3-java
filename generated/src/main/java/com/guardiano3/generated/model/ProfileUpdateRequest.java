@@ -48,7 +48,7 @@ import java.util.Set;
 import com.guardiano3.generated.JSON;
 
 /**
- * A PATCH: omit a field to leave it alone. &#x60;null&#x60; is not a way to clear one.  Both fields were nullable and both crashed the endpoint with a 500 — &#x60;{\&quot;name\&quot;: null}&#x60; violated the column&#39;s NOT NULL on commit, and &#x60;{\&quot;settings\&quot;: null}&#x60; made the service iterate a &#x60;None&#x60;. Any authenticated caller could do it, and the contract said both were acceptable.  Rejecting an explicit null turns those into the 422 the contract already declares. Nothing is lost: neither field has a meaningful empty state — you cannot have no name, and \&quot;no settings\&quot; is not a setting. &#x60;exclude_unset&#x60; in the handler is what still distinguishes \&quot;not supplied\&quot; from \&quot;supplied\&quot;, so omission continues to mean \&quot;leave it alone\&quot;.  Found by &#x60;tests/integration/test_contract_conformance.py&#x60;, which generates exactly this kind of payload and is why property-based testing earns its place next to hand-written cases.
+ * A PATCH: omit a field to leave it alone. &#x60;null&#x60; is not a way to clear one.  An explicit &#x60;null&#x60; is refused with &#x60;422&#x60;. Neither field has an empty state: an account always has a name, and \&quot;no settings\&quot; is not a setting.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.15.0")
 public class ProfileUpdateRequest {
