@@ -133,7 +133,7 @@ public class ErrorError {
   }
 
   /**
-   * Deep link to the error-code entry in the published errors reference. Present only when the deployment has &#x60;ERROR_DOCS_BASE_URL&#x60; configured; omitted otherwise rather than sent blank.
+   * Deep link to the error-code entry in the published errors reference. Omitted, rather than sent blank, when there is no entry to link to.
    * @return docsUrl
    */
   @javax.annotation.Nullable

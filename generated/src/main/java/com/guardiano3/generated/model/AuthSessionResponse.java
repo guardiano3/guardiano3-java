@@ -48,7 +48,7 @@ import java.util.Set;
 import com.guardiano3.generated.JSON;
 
 /**
- * A signed-in session (a device), not an analysis session.  Named to disambiguate from &#x60;product.SessionResponse&#x60;, which is an analysis session. Two Pydantic classes sharing a name is invisible on the server but produces &#x60;SchemasV1AuthSessionResponse&#x60; as a generated SDK type -- the contract&#39;s names are part of its public surface.
+ * A signed-in session (a device), not an analysis session (&#x60;SessionResponse&#x60;).
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.15.0")
 public class AuthSessionResponse {
