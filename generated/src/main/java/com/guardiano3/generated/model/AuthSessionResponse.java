@@ -1,6 +1,6 @@
 /*
  * GuardianO3 API
- * Real-time scam detection for phone calls.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live-call channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
+ * Real-time scam detection for audio and text.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live session channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@guardiano3.com
@@ -48,7 +48,7 @@ import java.util.Set;
 import com.guardiano3.generated.JSON;
 
 /**
- * A signed-in session (a device), not a monitored call.  Named to disambiguate from &#x60;product.SessionResponse&#x60;, which is a call session. Two Pydantic classes sharing a name is invisible on the server but produces &#x60;SchemasV1AuthSessionResponse&#x60; as a generated SDK type -- the contract&#39;s names are part of its public surface.
+ * A signed-in session (a device), not an analysis session.  Named to disambiguate from &#x60;product.SessionResponse&#x60;, which is an analysis session. Two Pydantic classes sharing a name is invisible on the server but produces &#x60;SchemasV1AuthSessionResponse&#x60; as a generated SDK type -- the contract&#39;s names are part of its public surface.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.15.0")
 public class AuthSessionResponse {
