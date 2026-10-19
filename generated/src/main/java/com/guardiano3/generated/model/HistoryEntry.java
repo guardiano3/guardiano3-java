@@ -1,6 +1,6 @@
 /*
  * GuardianO3 API
- * Real-time scam detection for phone calls.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live-call channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
+ * Real-time scam detection for audio and text.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live session channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@guardiano3.com
@@ -55,7 +55,7 @@ import com.guardiano3.generated.JSON;
 public class HistoryEntry {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String direction;
 
   public static final String SERIALIZED_NAME_ID = "id";
@@ -65,7 +65,7 @@ public class HistoryEntry {
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String phoneNumber;
 
   public static final String SERIALIZED_NAME_RISK_LEVEL = "riskLevel";
@@ -86,7 +86,7 @@ public class HistoryEntry {
   public HistoryEntry() {
   }
 
-  public HistoryEntry direction(@javax.annotation.Nonnull String direction) {
+  public HistoryEntry direction(@javax.annotation.Nullable String direction) {
     this.direction = direction;
     return this;
   }
@@ -95,12 +95,12 @@ public class HistoryEntry {
    * Get direction
    * @return direction
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDirection() {
     return direction;
   }
 
-  public void setDirection(@javax.annotation.Nonnull String direction) {
+  public void setDirection(@javax.annotation.Nullable String direction) {
     this.direction = direction;
   }
 
@@ -124,7 +124,7 @@ public class HistoryEntry {
   }
 
 
-  public HistoryEntry phoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public HistoryEntry phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -133,12 +133,12 @@ public class HistoryEntry {
    * Get phoneNumber
    * @return phoneNumber
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
@@ -268,7 +268,7 @@ public class HistoryEntry {
     openapiFields = new HashSet<String>(Arrays.asList("direction", "id", "phoneNumber", "riskLevel", "summary", "timestamp"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("direction", "id", "phoneNumber", "riskLevel", "timestamp"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "riskLevel", "timestamp"));
   }
 
   /**
@@ -299,13 +299,13 @@ public class HistoryEntry {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("direction").isJsonPrimitive()) {
+      if ((jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) && !jsonObj.get("direction").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `direction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("direction").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("phoneNumber").isJsonPrimitive()) {
+      if ((jsonObj.get("phoneNumber") != null && !jsonObj.get("phoneNumber").isJsonNull()) && !jsonObj.get("phoneNumber").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `phoneNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phoneNumber").toString()));
       }
       // validate the required field `riskLevel`
