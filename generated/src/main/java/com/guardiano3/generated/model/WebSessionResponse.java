@@ -47,7 +47,7 @@ import java.util.Set;
 import com.guardiano3.generated.JSON;
 
 /**
- * Browser login response (ADR-018). No refresh token — it travels in a cookie.
+ * Browser sign-in response. No refresh token in the body — it is set as a cookie.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.15.0")
 public class WebSessionResponse {
