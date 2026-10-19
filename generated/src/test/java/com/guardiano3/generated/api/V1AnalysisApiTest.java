@@ -42,10 +42,10 @@ public class V1AnalysisApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void analyzeAudioV1AnalyzeAudioPostTest() throws ApiException {
+    public void analyzeAudioTest() throws ApiException {
         File _file = null;
         String language = null;
-        AnalysisResponse response = api.analyzeAudioV1AnalyzeAudioPost(_file, language);
+        AnalysisResponse response = api.analyzeAudio(_file, language);
         // TODO: test validations
     }
 
@@ -57,10 +57,10 @@ public class V1AnalysisApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void analyzeTextV1AnalyzeTextPostTest() throws ApiException {
+    public void analyzeTextTest() throws ApiException {
         TextAnalysisRequest textAnalysisRequest = null;
         String idempotencyKey = null;
-        AnalysisResponse response = api.analyzeTextV1AnalyzeTextPost(textAnalysisRequest, idempotencyKey);
+        AnalysisResponse response = api.analyzeText(textAnalysisRequest, idempotencyKey);
         // TODO: test validations
     }
 

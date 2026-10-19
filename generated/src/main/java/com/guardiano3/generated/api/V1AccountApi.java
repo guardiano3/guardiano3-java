@@ -76,7 +76,7 @@ public class V1AccountApi {
     }
 
     /**
-     * Build call for getAnalyticsV1AnalyticsGet
+     * Build call for getAnalytics
      * @param window Rolling window, ending now. (optional, default to 30d)
      * @param environment  (optional, default to live)
      * @param _callback Callback for upload/download progress
@@ -96,7 +96,7 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAnalyticsV1AnalyticsGetCall(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAnalyticsCall(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,8 +149,8 @@ public class V1AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAnalyticsV1AnalyticsGetValidateBeforeCall(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback _callback) throws ApiException {
-        return getAnalyticsV1AnalyticsGetCall(window, environment, _callback);
+    private okhttp3.Call getAnalyticsValidateBeforeCall(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback _callback) throws ApiException {
+        return getAnalyticsCall(window, environment, _callback);
 
     }
 
@@ -175,8 +175,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AnalyticsResponse getAnalyticsV1AnalyticsGet(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment) throws ApiException {
-        ApiResponse<AnalyticsResponse> localVarResp = getAnalyticsV1AnalyticsGetWithHttpInfo(window, environment);
+    public AnalyticsResponse getAnalytics(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment) throws ApiException {
+        ApiResponse<AnalyticsResponse> localVarResp = getAnalyticsWithHttpInfo(window, environment);
         return localVarResp.getData();
     }
 
@@ -201,8 +201,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AnalyticsResponse> getAnalyticsV1AnalyticsGetWithHttpInfo(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment) throws ApiException {
-        okhttp3.Call localVarCall = getAnalyticsV1AnalyticsGetValidateBeforeCall(window, environment, null);
+    public ApiResponse<AnalyticsResponse> getAnalyticsWithHttpInfo(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment) throws ApiException {
+        okhttp3.Call localVarCall = getAnalyticsValidateBeforeCall(window, environment, null);
         Type localVarReturnType = new TypeToken<AnalyticsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -229,15 +229,15 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAnalyticsV1AnalyticsGetAsync(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback<AnalyticsResponse> _callback) throws ApiException {
+    public okhttp3.Call getAnalyticsAsync(@javax.annotation.Nullable String window, @javax.annotation.Nullable String environment, final ApiCallback<AnalyticsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAnalyticsV1AnalyticsGetValidateBeforeCall(window, environment, _callback);
+        okhttp3.Call localVarCall = getAnalyticsValidateBeforeCall(window, environment, _callback);
         Type localVarReturnType = new TypeToken<AnalyticsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getProfileV1UserProfileGet
+     * Build call for getProfile
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -255,7 +255,7 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfileV1UserProfileGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProfileCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,8 +300,8 @@ public class V1AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProfileV1UserProfileGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getProfileV1UserProfileGetCall(_callback);
+    private okhttp3.Call getProfileValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getProfileCall(_callback);
 
     }
 
@@ -324,8 +324,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ProfileResponse getProfileV1UserProfileGet() throws ApiException {
-        ApiResponse<ProfileResponse> localVarResp = getProfileV1UserProfileGetWithHttpInfo();
+    public ProfileResponse getProfile() throws ApiException {
+        ApiResponse<ProfileResponse> localVarResp = getProfileWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -348,8 +348,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProfileResponse> getProfileV1UserProfileGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getProfileV1UserProfileGetValidateBeforeCall(null);
+    public ApiResponse<ProfileResponse> getProfileWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getProfileValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<ProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -374,15 +374,15 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfileV1UserProfileGetAsync(final ApiCallback<ProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call getProfileAsync(final ApiCallback<ProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProfileV1UserProfileGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getProfileValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateProfileV1UserProfilePatch
+     * Build call for updateProfile
      * @param profileUpdateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -401,7 +401,7 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProfileV1UserProfilePatchCall(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProfileCall(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -447,13 +447,13 @@ public class V1AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProfileV1UserProfilePatchValidateBeforeCall(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProfileValidateBeforeCall(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'profileUpdateRequest' is set
         if (profileUpdateRequest == null) {
-            throw new ApiException("Missing the required parameter 'profileUpdateRequest' when calling updateProfileV1UserProfilePatch(Async)");
+            throw new ApiException("Missing the required parameter 'profileUpdateRequest' when calling updateProfile(Async)");
         }
 
-        return updateProfileV1UserProfilePatchCall(profileUpdateRequest, _callback);
+        return updateProfileCall(profileUpdateRequest, _callback);
 
     }
 
@@ -477,8 +477,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ProfileResponse updateProfileV1UserProfilePatch(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest) throws ApiException {
-        ApiResponse<ProfileResponse> localVarResp = updateProfileV1UserProfilePatchWithHttpInfo(profileUpdateRequest);
+    public ProfileResponse updateProfile(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest) throws ApiException {
+        ApiResponse<ProfileResponse> localVarResp = updateProfileWithHttpInfo(profileUpdateRequest);
         return localVarResp.getData();
     }
 
@@ -502,8 +502,8 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProfileResponse> updateProfileV1UserProfilePatchWithHttpInfo(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateProfileV1UserProfilePatchValidateBeforeCall(profileUpdateRequest, null);
+    public ApiResponse<ProfileResponse> updateProfileWithHttpInfo(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateProfileValidateBeforeCall(profileUpdateRequest, null);
         Type localVarReturnType = new TypeToken<ProfileResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -529,9 +529,9 @@ public class V1AccountApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProfileV1UserProfilePatchAsync(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback<ProfileResponse> _callback) throws ApiException {
+    public okhttp3.Call updateProfileAsync(@javax.annotation.Nonnull ProfileUpdateRequest profileUpdateRequest, final ApiCallback<ProfileResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateProfileV1UserProfilePatchValidateBeforeCall(profileUpdateRequest, _callback);
+        okhttp3.Call localVarCall = updateProfileValidateBeforeCall(profileUpdateRequest, _callback);
         Type localVarReturnType = new TypeToken<ProfileResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

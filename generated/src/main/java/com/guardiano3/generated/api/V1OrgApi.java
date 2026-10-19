@@ -81,7 +81,7 @@ public class V1OrgApi {
     }
 
     /**
-     * Build call for acceptInvitationV1OrgAcceptInvitationPost
+     * Build call for acceptInvitation
      * @param acceptInvitationRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -100,7 +100,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acceptInvitationV1OrgAcceptInvitationPostCall(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call acceptInvitationCall(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,13 +146,13 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call acceptInvitationV1OrgAcceptInvitationPostValidateBeforeCall(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call acceptInvitationValidateBeforeCall(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'acceptInvitationRequest' is set
         if (acceptInvitationRequest == null) {
-            throw new ApiException("Missing the required parameter 'acceptInvitationRequest' when calling acceptInvitationV1OrgAcceptInvitationPost(Async)");
+            throw new ApiException("Missing the required parameter 'acceptInvitationRequest' when calling acceptInvitation(Async)");
         }
 
-        return acceptInvitationV1OrgAcceptInvitationPostCall(acceptInvitationRequest, _callback);
+        return acceptInvitationCall(acceptInvitationRequest, _callback);
 
     }
 
@@ -176,8 +176,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public OrgMemberResponse acceptInvitationV1OrgAcceptInvitationPost(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest) throws ApiException {
-        ApiResponse<OrgMemberResponse> localVarResp = acceptInvitationV1OrgAcceptInvitationPostWithHttpInfo(acceptInvitationRequest);
+    public OrgMemberResponse acceptInvitation(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest) throws ApiException {
+        ApiResponse<OrgMemberResponse> localVarResp = acceptInvitationWithHttpInfo(acceptInvitationRequest);
         return localVarResp.getData();
     }
 
@@ -201,8 +201,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrgMemberResponse> acceptInvitationV1OrgAcceptInvitationPostWithHttpInfo(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest) throws ApiException {
-        okhttp3.Call localVarCall = acceptInvitationV1OrgAcceptInvitationPostValidateBeforeCall(acceptInvitationRequest, null);
+    public ApiResponse<OrgMemberResponse> acceptInvitationWithHttpInfo(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest) throws ApiException {
+        okhttp3.Call localVarCall = acceptInvitationValidateBeforeCall(acceptInvitationRequest, null);
         Type localVarReturnType = new TypeToken<OrgMemberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -228,15 +228,15 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acceptInvitationV1OrgAcceptInvitationPostAsync(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback<OrgMemberResponse> _callback) throws ApiException {
+    public okhttp3.Call acceptInvitationAsync(@javax.annotation.Nonnull AcceptInvitationRequest acceptInvitationRequest, final ApiCallback<OrgMemberResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = acceptInvitationV1OrgAcceptInvitationPostValidateBeforeCall(acceptInvitationRequest, _callback);
+        okhttp3.Call localVarCall = acceptInvitationValidateBeforeCall(acceptInvitationRequest, _callback);
         Type localVarReturnType = new TypeToken<OrgMemberResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for cancelInvitationV1OrgInvitationsInvitationIdDelete
+     * Build call for cancelInvitation
      * @param invitationId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -256,7 +256,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelInvitationV1OrgInvitationsInvitationIdDeleteCall(@javax.annotation.Nonnull String invitationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelInvitationCall(@javax.annotation.Nonnull String invitationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -302,13 +302,13 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelInvitationV1OrgInvitationsInvitationIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String invitationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelInvitationValidateBeforeCall(@javax.annotation.Nonnull String invitationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'invitationId' is set
         if (invitationId == null) {
-            throw new ApiException("Missing the required parameter 'invitationId' when calling cancelInvitationV1OrgInvitationsInvitationIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'invitationId' when calling cancelInvitation(Async)");
         }
 
-        return cancelInvitationV1OrgInvitationsInvitationIdDeleteCall(invitationId, _callback);
+        return cancelInvitationCall(invitationId, _callback);
 
     }
 
@@ -332,8 +332,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void cancelInvitationV1OrgInvitationsInvitationIdDelete(@javax.annotation.Nonnull String invitationId) throws ApiException {
-        cancelInvitationV1OrgInvitationsInvitationIdDeleteWithHttpInfo(invitationId);
+    public void cancelInvitation(@javax.annotation.Nonnull String invitationId) throws ApiException {
+        cancelInvitationWithHttpInfo(invitationId);
     }
 
     /**
@@ -357,8 +357,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> cancelInvitationV1OrgInvitationsInvitationIdDeleteWithHttpInfo(@javax.annotation.Nonnull String invitationId) throws ApiException {
-        okhttp3.Call localVarCall = cancelInvitationV1OrgInvitationsInvitationIdDeleteValidateBeforeCall(invitationId, null);
+    public ApiResponse<Void> cancelInvitationWithHttpInfo(@javax.annotation.Nonnull String invitationId) throws ApiException {
+        okhttp3.Call localVarCall = cancelInvitationValidateBeforeCall(invitationId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -384,14 +384,14 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelInvitationV1OrgInvitationsInvitationIdDeleteAsync(@javax.annotation.Nonnull String invitationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call cancelInvitationAsync(@javax.annotation.Nonnull String invitationId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelInvitationV1OrgInvitationsInvitationIdDeleteValidateBeforeCall(invitationId, _callback);
+        okhttp3.Call localVarCall = cancelInvitationValidateBeforeCall(invitationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getOrgV1OrgGet
+     * Build call for getOrg
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -409,7 +409,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrgV1OrgGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrgCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -454,8 +454,8 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrgV1OrgGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getOrgV1OrgGetCall(_callback);
+    private okhttp3.Call getOrgValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getOrgCall(_callback);
 
     }
 
@@ -478,8 +478,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public OrgResponse getOrgV1OrgGet() throws ApiException {
-        ApiResponse<OrgResponse> localVarResp = getOrgV1OrgGetWithHttpInfo();
+    public OrgResponse getOrg() throws ApiException {
+        ApiResponse<OrgResponse> localVarResp = getOrgWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -502,8 +502,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrgResponse> getOrgV1OrgGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getOrgV1OrgGetValidateBeforeCall(null);
+    public ApiResponse<OrgResponse> getOrgWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getOrgValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<OrgResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -528,15 +528,15 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrgV1OrgGetAsync(final ApiCallback<OrgResponse> _callback) throws ApiException {
+    public okhttp3.Call getOrgAsync(final ApiCallback<OrgResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getOrgV1OrgGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getOrgValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<OrgResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for inviteMemberV1OrgInvitationsPost
+     * Build call for inviteMember
      * @param inviteMemberRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -555,7 +555,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call inviteMemberV1OrgInvitationsPostCall(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call inviteMemberCall(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -601,13 +601,13 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call inviteMemberV1OrgInvitationsPostValidateBeforeCall(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call inviteMemberValidateBeforeCall(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'inviteMemberRequest' is set
         if (inviteMemberRequest == null) {
-            throw new ApiException("Missing the required parameter 'inviteMemberRequest' when calling inviteMemberV1OrgInvitationsPost(Async)");
+            throw new ApiException("Missing the required parameter 'inviteMemberRequest' when calling inviteMember(Async)");
         }
 
-        return inviteMemberV1OrgInvitationsPostCall(inviteMemberRequest, _callback);
+        return inviteMemberCall(inviteMemberRequest, _callback);
 
     }
 
@@ -631,8 +631,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public InvitationResponse inviteMemberV1OrgInvitationsPost(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest) throws ApiException {
-        ApiResponse<InvitationResponse> localVarResp = inviteMemberV1OrgInvitationsPostWithHttpInfo(inviteMemberRequest);
+    public InvitationResponse inviteMember(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest) throws ApiException {
+        ApiResponse<InvitationResponse> localVarResp = inviteMemberWithHttpInfo(inviteMemberRequest);
         return localVarResp.getData();
     }
 
@@ -656,8 +656,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InvitationResponse> inviteMemberV1OrgInvitationsPostWithHttpInfo(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest) throws ApiException {
-        okhttp3.Call localVarCall = inviteMemberV1OrgInvitationsPostValidateBeforeCall(inviteMemberRequest, null);
+    public ApiResponse<InvitationResponse> inviteMemberWithHttpInfo(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest) throws ApiException {
+        okhttp3.Call localVarCall = inviteMemberValidateBeforeCall(inviteMemberRequest, null);
         Type localVarReturnType = new TypeToken<InvitationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -683,15 +683,15 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call inviteMemberV1OrgInvitationsPostAsync(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback<InvitationResponse> _callback) throws ApiException {
+    public okhttp3.Call inviteMemberAsync(@javax.annotation.Nonnull InviteMemberRequest inviteMemberRequest, final ApiCallback<InvitationResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = inviteMemberV1OrgInvitationsPostValidateBeforeCall(inviteMemberRequest, _callback);
+        okhttp3.Call localVarCall = inviteMemberValidateBeforeCall(inviteMemberRequest, _callback);
         Type localVarReturnType = new TypeToken<InvitationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listInvitationsV1OrgInvitationsGet
+     * Build call for listInvitations
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -709,7 +709,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInvitationsV1OrgInvitationsGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listInvitationsCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -754,8 +754,8 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInvitationsV1OrgInvitationsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listInvitationsV1OrgInvitationsGetCall(_callback);
+    private okhttp3.Call listInvitationsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listInvitationsCall(_callback);
 
     }
 
@@ -778,8 +778,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public InvitationListResponse listInvitationsV1OrgInvitationsGet() throws ApiException {
-        ApiResponse<InvitationListResponse> localVarResp = listInvitationsV1OrgInvitationsGetWithHttpInfo();
+    public InvitationListResponse listInvitations() throws ApiException {
+        ApiResponse<InvitationListResponse> localVarResp = listInvitationsWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -802,8 +802,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InvitationListResponse> listInvitationsV1OrgInvitationsGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listInvitationsV1OrgInvitationsGetValidateBeforeCall(null);
+    public ApiResponse<InvitationListResponse> listInvitationsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listInvitationsValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<InvitationListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -828,15 +828,15 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInvitationsV1OrgInvitationsGetAsync(final ApiCallback<InvitationListResponse> _callback) throws ApiException {
+    public okhttp3.Call listInvitationsAsync(final ApiCallback<InvitationListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listInvitationsV1OrgInvitationsGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listInvitationsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<InvitationListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listMembersV1OrgMembersGet
+     * Build call for listMembers
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -854,7 +854,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMembersV1OrgMembersGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMembersCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -899,8 +899,8 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMembersV1OrgMembersGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listMembersV1OrgMembersGetCall(_callback);
+    private okhttp3.Call listMembersValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listMembersCall(_callback);
 
     }
 
@@ -923,8 +923,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public OrgMemberListResponse listMembersV1OrgMembersGet() throws ApiException {
-        ApiResponse<OrgMemberListResponse> localVarResp = listMembersV1OrgMembersGetWithHttpInfo();
+    public OrgMemberListResponse listMembers() throws ApiException {
+        ApiResponse<OrgMemberListResponse> localVarResp = listMembersWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -947,8 +947,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrgMemberListResponse> listMembersV1OrgMembersGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listMembersV1OrgMembersGetValidateBeforeCall(null);
+    public ApiResponse<OrgMemberListResponse> listMembersWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listMembersValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<OrgMemberListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -973,15 +973,15 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMembersV1OrgMembersGetAsync(final ApiCallback<OrgMemberListResponse> _callback) throws ApiException {
+    public okhttp3.Call listMembersAsync(final ApiCallback<OrgMemberListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listMembersV1OrgMembersGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listMembersValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<OrgMemberListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for removeMemberV1OrgMembersUserIdDelete
+     * Build call for removeMember
      * @param userId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1001,7 +1001,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeMemberV1OrgMembersUserIdDeleteCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeMemberCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1047,13 +1047,13 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeMemberV1OrgMembersUserIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeMemberValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling removeMemberV1OrgMembersUserIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'userId' when calling removeMember(Async)");
         }
 
-        return removeMemberV1OrgMembersUserIdDeleteCall(userId, _callback);
+        return removeMemberCall(userId, _callback);
 
     }
 
@@ -1077,8 +1077,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void removeMemberV1OrgMembersUserIdDelete(@javax.annotation.Nonnull String userId) throws ApiException {
-        removeMemberV1OrgMembersUserIdDeleteWithHttpInfo(userId);
+    public void removeMember(@javax.annotation.Nonnull String userId) throws ApiException {
+        removeMemberWithHttpInfo(userId);
     }
 
     /**
@@ -1102,8 +1102,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> removeMemberV1OrgMembersUserIdDeleteWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
-        okhttp3.Call localVarCall = removeMemberV1OrgMembersUserIdDeleteValidateBeforeCall(userId, null);
+    public ApiResponse<Void> removeMemberWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+        okhttp3.Call localVarCall = removeMemberValidateBeforeCall(userId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1129,14 +1129,14 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeMemberV1OrgMembersUserIdDeleteAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call removeMemberAsync(@javax.annotation.Nonnull String userId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeMemberV1OrgMembersUserIdDeleteValidateBeforeCall(userId, _callback);
+        okhttp3.Call localVarCall = removeMemberValidateBeforeCall(userId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for updateMemberRoleV1OrgMembersUserIdPatch
+     * Build call for updateMemberRole
      * @param userId  (required)
      * @param updateMemberRoleRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -1157,7 +1157,7 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMemberRoleV1OrgMembersUserIdPatchCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateMemberRoleCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1204,18 +1204,18 @@ public class V1OrgApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateMemberRoleV1OrgMembersUserIdPatchValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateMemberRoleValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
-            throw new ApiException("Missing the required parameter 'userId' when calling updateMemberRoleV1OrgMembersUserIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'userId' when calling updateMemberRole(Async)");
         }
 
         // verify the required parameter 'updateMemberRoleRequest' is set
         if (updateMemberRoleRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateMemberRoleRequest' when calling updateMemberRoleV1OrgMembersUserIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'updateMemberRoleRequest' when calling updateMemberRole(Async)");
         }
 
-        return updateMemberRoleV1OrgMembersUserIdPatchCall(userId, updateMemberRoleRequest, _callback);
+        return updateMemberRoleCall(userId, updateMemberRoleRequest, _callback);
 
     }
 
@@ -1241,8 +1241,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public OrgMemberResponse updateMemberRoleV1OrgMembersUserIdPatch(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest) throws ApiException {
-        ApiResponse<OrgMemberResponse> localVarResp = updateMemberRoleV1OrgMembersUserIdPatchWithHttpInfo(userId, updateMemberRoleRequest);
+    public OrgMemberResponse updateMemberRole(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest) throws ApiException {
+        ApiResponse<OrgMemberResponse> localVarResp = updateMemberRoleWithHttpInfo(userId, updateMemberRoleRequest);
         return localVarResp.getData();
     }
 
@@ -1268,8 +1268,8 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrgMemberResponse> updateMemberRoleV1OrgMembersUserIdPatchWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateMemberRoleV1OrgMembersUserIdPatchValidateBeforeCall(userId, updateMemberRoleRequest, null);
+    public ApiResponse<OrgMemberResponse> updateMemberRoleWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateMemberRoleValidateBeforeCall(userId, updateMemberRoleRequest, null);
         Type localVarReturnType = new TypeToken<OrgMemberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1297,9 +1297,9 @@ public class V1OrgApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateMemberRoleV1OrgMembersUserIdPatchAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback<OrgMemberResponse> _callback) throws ApiException {
+    public okhttp3.Call updateMemberRoleAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberRoleRequest updateMemberRoleRequest, final ApiCallback<OrgMemberResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateMemberRoleV1OrgMembersUserIdPatchValidateBeforeCall(userId, updateMemberRoleRequest, _callback);
+        okhttp3.Call localVarCall = updateMemberRoleValidateBeforeCall(userId, updateMemberRoleRequest, _callback);
         Type localVarReturnType = new TypeToken<OrgMemberResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

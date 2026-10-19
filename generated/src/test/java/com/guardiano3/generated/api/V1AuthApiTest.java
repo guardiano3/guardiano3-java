@@ -54,9 +54,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void changePasswordV1AuthPasswordPostTest() throws ApiException {
+    public void changePasswordTest() throws ApiException {
         PasswordChangeRequest passwordChangeRequest = null;
-        api.changePasswordV1AuthPasswordPost(passwordChangeRequest);
+        api.changePassword(passwordChangeRequest);
         // TODO: test validations
     }
 
@@ -68,9 +68,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void confirmEmailChangeV1AuthEmailConfirmPostTest() throws ApiException {
+    public void confirmEmailChangeTest() throws ApiException {
         TokenOnlyRequest tokenOnlyRequest = null;
-        UserResponse response = api.confirmEmailChangeV1AuthEmailConfirmPost(tokenOnlyRequest);
+        UserResponse response = api.confirmEmailChange(tokenOnlyRequest);
         // TODO: test validations
     }
 
@@ -82,9 +82,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void confirmPasswordResetV1AuthPasswordResetConfirmPostTest() throws ApiException {
+    public void confirmPasswordResetTest() throws ApiException {
         PasswordResetConfirmRequest passwordResetConfirmRequest = null;
-        api.confirmPasswordResetV1AuthPasswordResetConfirmPost(passwordResetConfirmRequest);
+        api.confirmPasswordReset(passwordResetConfirmRequest);
         // TODO: test validations
     }
 
@@ -96,9 +96,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void deleteAccountV1AuthDeleteAccountPostTest() throws ApiException {
+    public void deleteAccountTest() throws ApiException {
         AccountDeleteRequest accountDeleteRequest = null;
-        api.deleteAccountV1AuthDeleteAccountPost(accountDeleteRequest);
+        api.deleteAccount(accountDeleteRequest);
         // TODO: test validations
     }
 
@@ -108,9 +108,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void googleAuthV1AuthGooglePostTest() throws ApiException {
+    public void googleAuthTest() throws ApiException {
         GoogleAuthRequest googleAuthRequest = null;
-        TokenResponse response = api.googleAuthV1AuthGooglePost(googleAuthRequest);
+        TokenResponse response = api.googleAuth(googleAuthRequest);
         // TODO: test validations
     }
 
@@ -120,8 +120,8 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listSessionsV1AuthSessionsGetTest() throws ApiException {
-        SessionListResponse response = api.listSessionsV1AuthSessionsGet();
+    public void listSessionsTest() throws ApiException {
+        SessionListResponse response = api.listSessions();
         // TODO: test validations
     }
 
@@ -131,9 +131,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void loginV1AuthLoginPostTest() throws ApiException {
+    public void loginTest() throws ApiException {
         LoginRequest loginRequest = null;
-        TokenResponse response = api.loginV1AuthLoginPost(loginRequest);
+        TokenResponse response = api.login(loginRequest);
         // TODO: test validations
     }
 
@@ -143,9 +143,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void logoutV1AuthLogoutPostTest() throws ApiException {
+    public void logoutTest() throws ApiException {
         LogoutRequest logoutRequest = null;
-        api.logoutV1AuthLogoutPost(logoutRequest);
+        api.logout(logoutRequest);
         // TODO: test validations
     }
 
@@ -155,8 +155,8 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void meV1AuthMeGetTest() throws ApiException {
-        UserResponse response = api.meV1AuthMeGet();
+    public void meTest() throws ApiException {
+        UserResponse response = api.me();
         // TODO: test validations
     }
 
@@ -168,9 +168,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void refreshV1AuthRefreshPostTest() throws ApiException {
+    public void refreshTest() throws ApiException {
         RefreshRequest refreshRequest = null;
-        TokenResponse response = api.refreshV1AuthRefreshPost(refreshRequest);
+        TokenResponse response = api.refresh(refreshRequest);
         // TODO: test validations
     }
 
@@ -182,9 +182,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void registerV1AuthRegisterPostTest() throws ApiException {
+    public void registerTest() throws ApiException {
         RegisterRequest registerRequest = null;
-        AcceptedResponse response = api.registerV1AuthRegisterPost(registerRequest);
+        AcceptedResponse response = api.register(registerRequest);
         // TODO: test validations
     }
 
@@ -196,9 +196,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void requestEmailChangeV1AuthEmailPostTest() throws ApiException {
+    public void requestEmailChangeTest() throws ApiException {
         EmailChangeRequest emailChangeRequest = null;
-        AcceptedResponse response = api.requestEmailChangeV1AuthEmailPost(emailChangeRequest);
+        AcceptedResponse response = api.requestEmailChange(emailChangeRequest);
         // TODO: test validations
     }
 
@@ -208,9 +208,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void requestPasswordResetV1AuthPasswordResetPostTest() throws ApiException {
+    public void requestPasswordResetTest() throws ApiException {
         EmailOnlyRequest emailOnlyRequest = null;
-        AcceptedResponse response = api.requestPasswordResetV1AuthPasswordResetPost(emailOnlyRequest);
+        AcceptedResponse response = api.requestPasswordReset(emailOnlyRequest);
         // TODO: test validations
     }
 
@@ -220,9 +220,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void resendVerificationV1AuthResendVerificationPostTest() throws ApiException {
+    public void resendVerificationTest() throws ApiException {
         EmailOnlyRequest emailOnlyRequest = null;
-        AcceptedResponse response = api.resendVerificationV1AuthResendVerificationPost(emailOnlyRequest);
+        AcceptedResponse response = api.resendVerification(emailOnlyRequest);
         // TODO: test validations
     }
 
@@ -234,8 +234,8 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void revokeOtherSessionsV1AuthSessionsDeleteTest() throws ApiException {
-        api.revokeOtherSessionsV1AuthSessionsDelete();
+    public void revokeOtherSessionsTest() throws ApiException {
+        api.revokeOtherSessions();
         // TODO: test validations
     }
 
@@ -245,9 +245,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void revokeSessionV1AuthSessionsSessionIdDeleteTest() throws ApiException {
+    public void revokeSessionTest() throws ApiException {
         String sessionId = null;
-        api.revokeSessionV1AuthSessionsSessionIdDelete(sessionId);
+        api.revokeSession(sessionId);
         // TODO: test validations
     }
 
@@ -257,9 +257,9 @@ public class V1AuthApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void verifyEmailV1AuthVerifyEmailPostTest() throws ApiException {
+    public void verifyEmailTest() throws ApiException {
         TokenOnlyRequest tokenOnlyRequest = null;
-        UserResponse response = api.verifyEmailV1AuthVerifyEmailPost(tokenOnlyRequest);
+        UserResponse response = api.verifyEmail(tokenOnlyRequest);
         // TODO: test validations
     }
 

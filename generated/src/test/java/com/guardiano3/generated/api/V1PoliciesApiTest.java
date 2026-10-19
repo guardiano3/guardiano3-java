@@ -43,9 +43,9 @@ public class V1PoliciesApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void acceptPoliciesV1PoliciesAcceptPostTest() throws ApiException {
+    public void acceptPoliciesTest() throws ApiException {
         PolicyAcceptRequest policyAcceptRequest = null;
-        PoliciesAcceptedResponse response = api.acceptPoliciesV1PoliciesAcceptPost(policyAcceptRequest);
+        PoliciesAcceptedResponse response = api.acceptPolicies(policyAcceptRequest);
         // TODO: test validations
     }
 
@@ -57,8 +57,8 @@ public class V1PoliciesApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getCurrentPoliciesV1PoliciesCurrentGetTest() throws ApiException {
-        PoliciesCurrentResponse response = api.getCurrentPoliciesV1PoliciesCurrentGet();
+    public void getCurrentPoliciesTest() throws ApiException {
+        PoliciesCurrentResponse response = api.getCurrentPolicies();
         // TODO: test validations
     }
 
@@ -70,9 +70,9 @@ public class V1PoliciesApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getPolicyContentV1PoliciesKindGetTest() throws ApiException {
+    public void getPolicyContentTest() throws ApiException {
         PolicyKind kind = null;
-        String response = api.getPolicyContentV1PoliciesKindGet(kind);
+        String response = api.getPolicyContent(kind);
         // TODO: test validations
     }
 

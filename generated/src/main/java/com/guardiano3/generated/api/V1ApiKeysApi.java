@@ -80,7 +80,7 @@ public class V1ApiKeysApi {
     }
 
     /**
-     * Build call for createApiKeyV1ApiKeysPost
+     * Build call for createApiKey
      * @param apiKeyCreateRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -99,7 +99,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyV1ApiKeysPostCall(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createApiKeyCall(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,13 +145,13 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createApiKeyV1ApiKeysPostValidateBeforeCall(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createApiKeyValidateBeforeCall(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'apiKeyCreateRequest' is set
         if (apiKeyCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyCreateRequest' when calling createApiKeyV1ApiKeysPost(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyCreateRequest' when calling createApiKey(Async)");
         }
 
-        return createApiKeyV1ApiKeysPostCall(apiKeyCreateRequest, _callback);
+        return createApiKeyCall(apiKeyCreateRequest, _callback);
 
     }
 
@@ -175,8 +175,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyCreatedResponse createApiKeyV1ApiKeysPost(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
-        ApiResponse<ApiKeyCreatedResponse> localVarResp = createApiKeyV1ApiKeysPostWithHttpInfo(apiKeyCreateRequest);
+    public ApiKeyCreatedResponse createApiKey(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
+        ApiResponse<ApiKeyCreatedResponse> localVarResp = createApiKeyWithHttpInfo(apiKeyCreateRequest);
         return localVarResp.getData();
     }
 
@@ -200,8 +200,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyCreatedResponse> createApiKeyV1ApiKeysPostWithHttpInfo(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = createApiKeyV1ApiKeysPostValidateBeforeCall(apiKeyCreateRequest, null);
+    public ApiResponse<ApiKeyCreatedResponse> createApiKeyWithHttpInfo(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(apiKeyCreateRequest, null);
         Type localVarReturnType = new TypeToken<ApiKeyCreatedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -227,15 +227,15 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyV1ApiKeysPostAsync(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback<ApiKeyCreatedResponse> _callback) throws ApiException {
+    public okhttp3.Call createApiKeyAsync(@javax.annotation.Nonnull ApiKeyCreateRequest apiKeyCreateRequest, final ApiCallback<ApiKeyCreatedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createApiKeyV1ApiKeysPostValidateBeforeCall(apiKeyCreateRequest, _callback);
+        okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(apiKeyCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyCreatedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getApiKeyV1ApiKeysKeyIdGet
+     * Build call for getApiKey
      * @param keyId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -255,7 +255,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyV1ApiKeysKeyIdGetCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApiKeyCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -301,13 +301,13 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApiKeyV1ApiKeysKeyIdGetValidateBeforeCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApiKeyValidateBeforeCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling getApiKeyV1ApiKeysKeyIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling getApiKey(Async)");
         }
 
-        return getApiKeyV1ApiKeysKeyIdGetCall(keyId, _callback);
+        return getApiKeyCall(keyId, _callback);
 
     }
 
@@ -332,8 +332,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyResponse getApiKeyV1ApiKeysKeyIdGet(@javax.annotation.Nonnull String keyId) throws ApiException {
-        ApiResponse<ApiKeyResponse> localVarResp = getApiKeyV1ApiKeysKeyIdGetWithHttpInfo(keyId);
+    public ApiKeyResponse getApiKey(@javax.annotation.Nonnull String keyId) throws ApiException {
+        ApiResponse<ApiKeyResponse> localVarResp = getApiKeyWithHttpInfo(keyId);
         return localVarResp.getData();
     }
 
@@ -358,8 +358,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyResponse> getApiKeyV1ApiKeysKeyIdGetWithHttpInfo(@javax.annotation.Nonnull String keyId) throws ApiException {
-        okhttp3.Call localVarCall = getApiKeyV1ApiKeysKeyIdGetValidateBeforeCall(keyId, null);
+    public ApiResponse<ApiKeyResponse> getApiKeyWithHttpInfo(@javax.annotation.Nonnull String keyId) throws ApiException {
+        okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(keyId, null);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -386,15 +386,15 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyV1ApiKeysKeyIdGetAsync(@javax.annotation.Nonnull String keyId, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
+    public okhttp3.Call getApiKeyAsync(@javax.annotation.Nonnull String keyId, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getApiKeyV1ApiKeysKeyIdGetValidateBeforeCall(keyId, _callback);
+        okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(keyId, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listApiKeysV1ApiKeysGet
+     * Build call for listApiKeys
      * @param includeRevoked  (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -413,7 +413,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysV1ApiKeysGetCall(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listApiKeysCall(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -462,8 +462,8 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listApiKeysV1ApiKeysGetValidateBeforeCall(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback _callback) throws ApiException {
-        return listApiKeysV1ApiKeysGetCall(includeRevoked, _callback);
+    private okhttp3.Call listApiKeysValidateBeforeCall(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback _callback) throws ApiException {
+        return listApiKeysCall(includeRevoked, _callback);
 
     }
 
@@ -487,8 +487,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyListResponse listApiKeysV1ApiKeysGet(@javax.annotation.Nullable Boolean includeRevoked) throws ApiException {
-        ApiResponse<ApiKeyListResponse> localVarResp = listApiKeysV1ApiKeysGetWithHttpInfo(includeRevoked);
+    public ApiKeyListResponse listApiKeys(@javax.annotation.Nullable Boolean includeRevoked) throws ApiException {
+        ApiResponse<ApiKeyListResponse> localVarResp = listApiKeysWithHttpInfo(includeRevoked);
         return localVarResp.getData();
     }
 
@@ -512,8 +512,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyListResponse> listApiKeysV1ApiKeysGetWithHttpInfo(@javax.annotation.Nullable Boolean includeRevoked) throws ApiException {
-        okhttp3.Call localVarCall = listApiKeysV1ApiKeysGetValidateBeforeCall(includeRevoked, null);
+    public ApiResponse<ApiKeyListResponse> listApiKeysWithHttpInfo(@javax.annotation.Nullable Boolean includeRevoked) throws ApiException {
+        okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(includeRevoked, null);
         Type localVarReturnType = new TypeToken<ApiKeyListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -539,15 +539,15 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysV1ApiKeysGetAsync(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback<ApiKeyListResponse> _callback) throws ApiException {
+    public okhttp3.Call listApiKeysAsync(@javax.annotation.Nullable Boolean includeRevoked, final ApiCallback<ApiKeyListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listApiKeysV1ApiKeysGetValidateBeforeCall(includeRevoked, _callback);
+        okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(includeRevoked, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listScopesV1ApiKeysScopesGet
+     * Build call for listScopes
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -565,7 +565,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listScopesV1ApiKeysScopesGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listScopesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -610,8 +610,8 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listScopesV1ApiKeysScopesGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listScopesV1ApiKeysScopesGetCall(_callback);
+    private okhttp3.Call listScopesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listScopesCall(_callback);
 
     }
 
@@ -634,8 +634,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ScopeListResponse listScopesV1ApiKeysScopesGet() throws ApiException {
-        ApiResponse<ScopeListResponse> localVarResp = listScopesV1ApiKeysScopesGetWithHttpInfo();
+    public ScopeListResponse listScopes() throws ApiException {
+        ApiResponse<ScopeListResponse> localVarResp = listScopesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -658,8 +658,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScopeListResponse> listScopesV1ApiKeysScopesGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listScopesV1ApiKeysScopesGetValidateBeforeCall(null);
+    public ApiResponse<ScopeListResponse> listScopesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listScopesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<ScopeListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -684,15 +684,15 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listScopesV1ApiKeysScopesGetAsync(final ApiCallback<ScopeListResponse> _callback) throws ApiException {
+    public okhttp3.Call listScopesAsync(final ApiCallback<ScopeListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listScopesV1ApiKeysScopesGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listScopesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<ScopeListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for revokeApiKeyV1ApiKeysKeyIdDelete
+     * Build call for revokeApiKey
      * @param keyId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -712,7 +712,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeApiKeyV1ApiKeysKeyIdDeleteCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call revokeApiKeyCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -758,13 +758,13 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call revokeApiKeyV1ApiKeysKeyIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call revokeApiKeyValidateBeforeCall(@javax.annotation.Nonnull String keyId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling revokeApiKeyV1ApiKeysKeyIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling revokeApiKey(Async)");
         }
 
-        return revokeApiKeyV1ApiKeysKeyIdDeleteCall(keyId, _callback);
+        return revokeApiKeyCall(keyId, _callback);
 
     }
 
@@ -788,8 +788,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void revokeApiKeyV1ApiKeysKeyIdDelete(@javax.annotation.Nonnull String keyId) throws ApiException {
-        revokeApiKeyV1ApiKeysKeyIdDeleteWithHttpInfo(keyId);
+    public void revokeApiKey(@javax.annotation.Nonnull String keyId) throws ApiException {
+        revokeApiKeyWithHttpInfo(keyId);
     }
 
     /**
@@ -813,8 +813,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> revokeApiKeyV1ApiKeysKeyIdDeleteWithHttpInfo(@javax.annotation.Nonnull String keyId) throws ApiException {
-        okhttp3.Call localVarCall = revokeApiKeyV1ApiKeysKeyIdDeleteValidateBeforeCall(keyId, null);
+    public ApiResponse<Void> revokeApiKeyWithHttpInfo(@javax.annotation.Nonnull String keyId) throws ApiException {
+        okhttp3.Call localVarCall = revokeApiKeyValidateBeforeCall(keyId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -840,14 +840,14 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeApiKeyV1ApiKeysKeyIdDeleteAsync(@javax.annotation.Nonnull String keyId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call revokeApiKeyAsync(@javax.annotation.Nonnull String keyId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = revokeApiKeyV1ApiKeysKeyIdDeleteValidateBeforeCall(keyId, _callback);
+        okhttp3.Call localVarCall = revokeApiKeyValidateBeforeCall(keyId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for rotateApiKeyV1ApiKeysKeyIdRotatePost
+     * Build call for rotateApiKey
      * @param keyId  (required)
      * @param apiKeyRotateRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -868,7 +868,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateApiKeyV1ApiKeysKeyIdRotatePostCall(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call rotateApiKeyCall(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -915,18 +915,18 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call rotateApiKeyV1ApiKeysKeyIdRotatePostValidateBeforeCall(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call rotateApiKeyValidateBeforeCall(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-            throw new ApiException("Missing the required parameter 'keyId' when calling rotateApiKeyV1ApiKeysKeyIdRotatePost(Async)");
+            throw new ApiException("Missing the required parameter 'keyId' when calling rotateApiKey(Async)");
         }
 
         // verify the required parameter 'apiKeyRotateRequest' is set
         if (apiKeyRotateRequest == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyRotateRequest' when calling rotateApiKeyV1ApiKeysKeyIdRotatePost(Async)");
+            throw new ApiException("Missing the required parameter 'apiKeyRotateRequest' when calling rotateApiKey(Async)");
         }
 
-        return rotateApiKeyV1ApiKeysKeyIdRotatePostCall(keyId, apiKeyRotateRequest, _callback);
+        return rotateApiKeyCall(keyId, apiKeyRotateRequest, _callback);
 
     }
 
@@ -952,8 +952,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyCreatedResponse rotateApiKeyV1ApiKeysKeyIdRotatePost(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest) throws ApiException {
-        ApiResponse<ApiKeyCreatedResponse> localVarResp = rotateApiKeyV1ApiKeysKeyIdRotatePostWithHttpInfo(keyId, apiKeyRotateRequest);
+    public ApiKeyCreatedResponse rotateApiKey(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest) throws ApiException {
+        ApiResponse<ApiKeyCreatedResponse> localVarResp = rotateApiKeyWithHttpInfo(keyId, apiKeyRotateRequest);
         return localVarResp.getData();
     }
 
@@ -979,8 +979,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyCreatedResponse> rotateApiKeyV1ApiKeysKeyIdRotatePostWithHttpInfo(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest) throws ApiException {
-        okhttp3.Call localVarCall = rotateApiKeyV1ApiKeysKeyIdRotatePostValidateBeforeCall(keyId, apiKeyRotateRequest, null);
+    public ApiResponse<ApiKeyCreatedResponse> rotateApiKeyWithHttpInfo(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest) throws ApiException {
+        okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(keyId, apiKeyRotateRequest, null);
         Type localVarReturnType = new TypeToken<ApiKeyCreatedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1008,15 +1008,15 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateApiKeyV1ApiKeysKeyIdRotatePostAsync(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback<ApiKeyCreatedResponse> _callback) throws ApiException {
+    public okhttp3.Call rotateApiKeyAsync(@javax.annotation.Nonnull String keyId, @javax.annotation.Nonnull ApiKeyRotateRequest apiKeyRotateRequest, final ApiCallback<ApiKeyCreatedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = rotateApiKeyV1ApiKeysKeyIdRotatePostValidateBeforeCall(keyId, apiKeyRotateRequest, _callback);
+        okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(keyId, apiKeyRotateRequest, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyCreatedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for whoamiV1WhoamiGet
+     * Build call for whoami
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1034,7 +1034,7 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call whoamiV1WhoamiGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call whoamiCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1079,8 +1079,8 @@ public class V1ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call whoamiV1WhoamiGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return whoamiV1WhoamiGetCall(_callback);
+    private okhttp3.Call whoamiValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return whoamiCall(_callback);
 
     }
 
@@ -1103,8 +1103,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public WhoAmIResponse whoamiV1WhoamiGet() throws ApiException {
-        ApiResponse<WhoAmIResponse> localVarResp = whoamiV1WhoamiGetWithHttpInfo();
+    public WhoAmIResponse whoami() throws ApiException {
+        ApiResponse<WhoAmIResponse> localVarResp = whoamiWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -1127,8 +1127,8 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WhoAmIResponse> whoamiV1WhoamiGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = whoamiV1WhoamiGetValidateBeforeCall(null);
+    public ApiResponse<WhoAmIResponse> whoamiWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = whoamiValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<WhoAmIResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1153,9 +1153,9 @@ public class V1ApiKeysApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call whoamiV1WhoamiGetAsync(final ApiCallback<WhoAmIResponse> _callback) throws ApiException {
+    public okhttp3.Call whoamiAsync(final ApiCallback<WhoAmIResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = whoamiV1WhoamiGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = whoamiValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<WhoAmIResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

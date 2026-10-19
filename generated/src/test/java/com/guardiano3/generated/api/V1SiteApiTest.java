@@ -44,9 +44,9 @@ public class V1SiteApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void confirmSubscriptionV1SiteSubscribeConfirmPostTest() throws ApiException {
+    public void confirmSubscriptionTest() throws ApiException {
         SubscriptionTokenRequest subscriptionTokenRequest = null;
-        SubscriptionStatusResponse response = api.confirmSubscriptionV1SiteSubscribeConfirmPost(subscriptionTokenRequest);
+        SubscriptionStatusResponse response = api.confirmSubscription(subscriptionTokenRequest);
         // TODO: test validations
     }
 
@@ -58,9 +58,9 @@ public class V1SiteApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void contactSalesV1SiteContactSalesPostTest() throws ApiException {
+    public void contactSalesTest() throws ApiException {
         ContactSalesRequest contactSalesRequest = null;
-        SiteAcceptedResponse response = api.contactSalesV1SiteContactSalesPost(contactSalesRequest);
+        SiteAcceptedResponse response = api.contactSales(contactSalesRequest);
         // TODO: test validations
     }
 
@@ -72,9 +72,9 @@ public class V1SiteApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void subscribeV1SiteSubscribePostTest() throws ApiException {
+    public void subscribeTest() throws ApiException {
         SubscribeRequest subscribeRequest = null;
-        SiteAcceptedResponse response = api.subscribeV1SiteSubscribePost(subscribeRequest);
+        SiteAcceptedResponse response = api.subscribe(subscribeRequest);
         // TODO: test validations
     }
 
@@ -86,9 +86,9 @@ public class V1SiteApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void unsubscribeV1SiteUnsubscribePostTest() throws ApiException {
+    public void unsubscribeTest() throws ApiException {
         SubscriptionTokenRequest subscriptionTokenRequest = null;
-        SubscriptionStatusResponse response = api.unsubscribeV1SiteUnsubscribePost(subscriptionTokenRequest);
+        SubscriptionStatusResponse response = api.unsubscribe(subscriptionTokenRequest);
         // TODO: test validations
     }
 

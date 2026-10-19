@@ -76,7 +76,7 @@ public class V1AnalysisApi {
     }
 
     /**
-     * Build call for analyzeAudioV1AnalyzeAudioPost
+     * Build call for analyzeAudio
      * @param _file  (required)
      * @param language  (optional)
      * @param _callback Callback for upload/download progress
@@ -96,7 +96,7 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call analyzeAudioV1AnalyzeAudioPostCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call analyzeAudioCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,13 +150,13 @@ public class V1AnalysisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call analyzeAudioV1AnalyzeAudioPostValidateBeforeCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call analyzeAudioValidateBeforeCall(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback _callback) throws ApiException {
         // verify the required parameter '_file' is set
         if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling analyzeAudioV1AnalyzeAudioPost(Async)");
+            throw new ApiException("Missing the required parameter '_file' when calling analyzeAudio(Async)");
         }
 
-        return analyzeAudioV1AnalyzeAudioPostCall(_file, language, _callback);
+        return analyzeAudioCall(_file, language, _callback);
 
     }
 
@@ -181,8 +181,8 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AnalysisResponse analyzeAudioV1AnalyzeAudioPost(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language) throws ApiException {
-        ApiResponse<AnalysisResponse> localVarResp = analyzeAudioV1AnalyzeAudioPostWithHttpInfo(_file, language);
+    public AnalysisResponse analyzeAudio(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language) throws ApiException {
+        ApiResponse<AnalysisResponse> localVarResp = analyzeAudioWithHttpInfo(_file, language);
         return localVarResp.getData();
     }
 
@@ -207,8 +207,8 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AnalysisResponse> analyzeAudioV1AnalyzeAudioPostWithHttpInfo(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language) throws ApiException {
-        okhttp3.Call localVarCall = analyzeAudioV1AnalyzeAudioPostValidateBeforeCall(_file, language, null);
+    public ApiResponse<AnalysisResponse> analyzeAudioWithHttpInfo(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language) throws ApiException {
+        okhttp3.Call localVarCall = analyzeAudioValidateBeforeCall(_file, language, null);
         Type localVarReturnType = new TypeToken<AnalysisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -235,15 +235,15 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call analyzeAudioV1AnalyzeAudioPostAsync(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback<AnalysisResponse> _callback) throws ApiException {
+    public okhttp3.Call analyzeAudioAsync(@javax.annotation.Nonnull File _file, @javax.annotation.Nullable String language, final ApiCallback<AnalysisResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = analyzeAudioV1AnalyzeAudioPostValidateBeforeCall(_file, language, _callback);
+        okhttp3.Call localVarCall = analyzeAudioValidateBeforeCall(_file, language, _callback);
         Type localVarReturnType = new TypeToken<AnalysisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for analyzeTextV1AnalyzeTextPost
+     * Build call for analyzeText
      * @param textAnalysisRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -263,7 +263,7 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call analyzeTextV1AnalyzeTextPostCall(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call analyzeTextCall(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -314,13 +314,13 @@ public class V1AnalysisApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call analyzeTextV1AnalyzeTextPostValidateBeforeCall(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call analyzeTextValidateBeforeCall(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'textAnalysisRequest' is set
         if (textAnalysisRequest == null) {
-            throw new ApiException("Missing the required parameter 'textAnalysisRequest' when calling analyzeTextV1AnalyzeTextPost(Async)");
+            throw new ApiException("Missing the required parameter 'textAnalysisRequest' when calling analyzeText(Async)");
         }
 
-        return analyzeTextV1AnalyzeTextPostCall(textAnalysisRequest, idempotencyKey, _callback);
+        return analyzeTextCall(textAnalysisRequest, idempotencyKey, _callback);
 
     }
 
@@ -345,8 +345,8 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AnalysisResponse analyzeTextV1AnalyzeTextPost(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        ApiResponse<AnalysisResponse> localVarResp = analyzeTextV1AnalyzeTextPostWithHttpInfo(textAnalysisRequest, idempotencyKey);
+    public AnalysisResponse analyzeText(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        ApiResponse<AnalysisResponse> localVarResp = analyzeTextWithHttpInfo(textAnalysisRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -371,8 +371,8 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AnalysisResponse> analyzeTextV1AnalyzeTextPostWithHttpInfo(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = analyzeTextV1AnalyzeTextPostValidateBeforeCall(textAnalysisRequest, idempotencyKey, null);
+    public ApiResponse<AnalysisResponse> analyzeTextWithHttpInfo(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = analyzeTextValidateBeforeCall(textAnalysisRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<AnalysisResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -399,9 +399,9 @@ public class V1AnalysisApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call analyzeTextV1AnalyzeTextPostAsync(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<AnalysisResponse> _callback) throws ApiException {
+    public okhttp3.Call analyzeTextAsync(@javax.annotation.Nonnull TextAnalysisRequest textAnalysisRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<AnalysisResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = analyzeTextV1AnalyzeTextPostValidateBeforeCall(textAnalysisRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = analyzeTextValidateBeforeCall(textAnalysisRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<AnalysisResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

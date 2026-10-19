@@ -76,7 +76,7 @@ public class V1AuthWebApi {
     }
 
     /**
-     * Build call for webGoogleV1AuthWebGooglePost
+     * Build call for webGoogle
      * @param googleAuthRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -95,7 +95,7 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webGoogleV1AuthWebGooglePostCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webGoogleCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,13 +141,13 @@ public class V1AuthWebApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webGoogleV1AuthWebGooglePostValidateBeforeCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webGoogleValidateBeforeCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'googleAuthRequest' is set
         if (googleAuthRequest == null) {
-            throw new ApiException("Missing the required parameter 'googleAuthRequest' when calling webGoogleV1AuthWebGooglePost(Async)");
+            throw new ApiException("Missing the required parameter 'googleAuthRequest' when calling webGoogle(Async)");
         }
 
-        return webGoogleV1AuthWebGooglePostCall(googleAuthRequest, _callback);
+        return webGoogleCall(googleAuthRequest, _callback);
 
     }
 
@@ -171,8 +171,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public WebSessionResponse webGoogleV1AuthWebGooglePost(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
-        ApiResponse<WebSessionResponse> localVarResp = webGoogleV1AuthWebGooglePostWithHttpInfo(googleAuthRequest);
+    public WebSessionResponse webGoogle(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
+        ApiResponse<WebSessionResponse> localVarResp = webGoogleWithHttpInfo(googleAuthRequest);
         return localVarResp.getData();
     }
 
@@ -196,8 +196,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebSessionResponse> webGoogleV1AuthWebGooglePostWithHttpInfo(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
-        okhttp3.Call localVarCall = webGoogleV1AuthWebGooglePostValidateBeforeCall(googleAuthRequest, null);
+    public ApiResponse<WebSessionResponse> webGoogleWithHttpInfo(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
+        okhttp3.Call localVarCall = webGoogleValidateBeforeCall(googleAuthRequest, null);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -223,15 +223,15 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webGoogleV1AuthWebGooglePostAsync(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback<WebSessionResponse> _callback) throws ApiException {
+    public okhttp3.Call webGoogleAsync(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback<WebSessionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webGoogleV1AuthWebGooglePostValidateBeforeCall(googleAuthRequest, _callback);
+        okhttp3.Call localVarCall = webGoogleValidateBeforeCall(googleAuthRequest, _callback);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for webLoginV1AuthWebLoginPost
+     * Build call for webLogin
      * @param loginRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -250,7 +250,7 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webLoginV1AuthWebLoginPostCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webLoginCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -296,13 +296,13 @@ public class V1AuthWebApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webLoginV1AuthWebLoginPostValidateBeforeCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call webLoginValidateBeforeCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'loginRequest' is set
         if (loginRequest == null) {
-            throw new ApiException("Missing the required parameter 'loginRequest' when calling webLoginV1AuthWebLoginPost(Async)");
+            throw new ApiException("Missing the required parameter 'loginRequest' when calling webLogin(Async)");
         }
 
-        return webLoginV1AuthWebLoginPostCall(loginRequest, _callback);
+        return webLoginCall(loginRequest, _callback);
 
     }
 
@@ -326,8 +326,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public WebSessionResponse webLoginV1AuthWebLoginPost(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
-        ApiResponse<WebSessionResponse> localVarResp = webLoginV1AuthWebLoginPostWithHttpInfo(loginRequest);
+    public WebSessionResponse webLogin(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
+        ApiResponse<WebSessionResponse> localVarResp = webLoginWithHttpInfo(loginRequest);
         return localVarResp.getData();
     }
 
@@ -351,8 +351,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebSessionResponse> webLoginV1AuthWebLoginPostWithHttpInfo(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
-        okhttp3.Call localVarCall = webLoginV1AuthWebLoginPostValidateBeforeCall(loginRequest, null);
+    public ApiResponse<WebSessionResponse> webLoginWithHttpInfo(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
+        okhttp3.Call localVarCall = webLoginValidateBeforeCall(loginRequest, null);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -378,15 +378,15 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webLoginV1AuthWebLoginPostAsync(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback<WebSessionResponse> _callback) throws ApiException {
+    public okhttp3.Call webLoginAsync(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback<WebSessionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webLoginV1AuthWebLoginPostValidateBeforeCall(loginRequest, _callback);
+        okhttp3.Call localVarCall = webLoginValidateBeforeCall(loginRequest, _callback);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for webLogoutV1AuthWebLogoutPost
+     * Build call for webLogout
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -404,7 +404,7 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webLogoutV1AuthWebLogoutPostCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webLogoutCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -449,8 +449,8 @@ public class V1AuthWebApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webLogoutV1AuthWebLogoutPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return webLogoutV1AuthWebLogoutPostCall(_callback);
+    private okhttp3.Call webLogoutValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return webLogoutCall(_callback);
 
     }
 
@@ -472,8 +472,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void webLogoutV1AuthWebLogoutPost() throws ApiException {
-        webLogoutV1AuthWebLogoutPostWithHttpInfo();
+    public void webLogout() throws ApiException {
+        webLogoutWithHttpInfo();
     }
 
     /**
@@ -495,8 +495,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> webLogoutV1AuthWebLogoutPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = webLogoutV1AuthWebLogoutPostValidateBeforeCall(null);
+    public ApiResponse<Void> webLogoutWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = webLogoutValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -520,14 +520,14 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webLogoutV1AuthWebLogoutPostAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call webLogoutAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webLogoutV1AuthWebLogoutPostValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = webLogoutValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for webRefreshV1AuthWebRefreshPost
+     * Build call for webRefresh
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -545,7 +545,7 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webRefreshV1AuthWebRefreshPostCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call webRefreshCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -590,8 +590,8 @@ public class V1AuthWebApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call webRefreshV1AuthWebRefreshPostValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return webRefreshV1AuthWebRefreshPostCall(_callback);
+    private okhttp3.Call webRefreshValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return webRefreshCall(_callback);
 
     }
 
@@ -614,8 +614,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public WebSessionResponse webRefreshV1AuthWebRefreshPost() throws ApiException {
-        ApiResponse<WebSessionResponse> localVarResp = webRefreshV1AuthWebRefreshPostWithHttpInfo();
+    public WebSessionResponse webRefresh() throws ApiException {
+        ApiResponse<WebSessionResponse> localVarResp = webRefreshWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -638,8 +638,8 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebSessionResponse> webRefreshV1AuthWebRefreshPostWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = webRefreshV1AuthWebRefreshPostValidateBeforeCall(null);
+    public ApiResponse<WebSessionResponse> webRefreshWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = webRefreshValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -664,9 +664,9 @@ public class V1AuthWebApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call webRefreshV1AuthWebRefreshPostAsync(final ApiCallback<WebSessionResponse> _callback) throws ApiException {
+    public okhttp3.Call webRefreshAsync(final ApiCallback<WebSessionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = webRefreshV1AuthWebRefreshPostValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = webRefreshValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<WebSessionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

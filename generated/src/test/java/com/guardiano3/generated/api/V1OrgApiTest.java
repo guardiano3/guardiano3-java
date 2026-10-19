@@ -45,9 +45,9 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void acceptInvitationV1OrgAcceptInvitationPostTest() throws ApiException {
+    public void acceptInvitationTest() throws ApiException {
         AcceptInvitationRequest acceptInvitationRequest = null;
-        OrgMemberResponse response = api.acceptInvitationV1OrgAcceptInvitationPost(acceptInvitationRequest);
+        OrgMemberResponse response = api.acceptInvitation(acceptInvitationRequest);
         // TODO: test validations
     }
 
@@ -57,9 +57,9 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void cancelInvitationV1OrgInvitationsInvitationIdDeleteTest() throws ApiException {
+    public void cancelInvitationTest() throws ApiException {
         String invitationId = null;
-        api.cancelInvitationV1OrgInvitationsInvitationIdDelete(invitationId);
+        api.cancelInvitation(invitationId);
         // TODO: test validations
     }
 
@@ -69,8 +69,8 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getOrgV1OrgGetTest() throws ApiException {
-        OrgResponse response = api.getOrgV1OrgGet();
+    public void getOrgTest() throws ApiException {
+        OrgResponse response = api.getOrg();
         // TODO: test validations
     }
 
@@ -80,9 +80,9 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void inviteMemberV1OrgInvitationsPostTest() throws ApiException {
+    public void inviteMemberTest() throws ApiException {
         InviteMemberRequest inviteMemberRequest = null;
-        InvitationResponse response = api.inviteMemberV1OrgInvitationsPost(inviteMemberRequest);
+        InvitationResponse response = api.inviteMember(inviteMemberRequest);
         // TODO: test validations
     }
 
@@ -92,8 +92,8 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listInvitationsV1OrgInvitationsGetTest() throws ApiException {
-        InvitationListResponse response = api.listInvitationsV1OrgInvitationsGet();
+    public void listInvitationsTest() throws ApiException {
+        InvitationListResponse response = api.listInvitations();
         // TODO: test validations
     }
 
@@ -103,8 +103,8 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listMembersV1OrgMembersGetTest() throws ApiException {
-        OrgMemberListResponse response = api.listMembersV1OrgMembersGet();
+    public void listMembersTest() throws ApiException {
+        OrgMemberListResponse response = api.listMembers();
         // TODO: test validations
     }
 
@@ -114,9 +114,9 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void removeMemberV1OrgMembersUserIdDeleteTest() throws ApiException {
+    public void removeMemberTest() throws ApiException {
         String userId = null;
-        api.removeMemberV1OrgMembersUserIdDelete(userId);
+        api.removeMember(userId);
         // TODO: test validations
     }
 
@@ -126,10 +126,10 @@ public class V1OrgApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void updateMemberRoleV1OrgMembersUserIdPatchTest() throws ApiException {
+    public void updateMemberRoleTest() throws ApiException {
         String userId = null;
         UpdateMemberRoleRequest updateMemberRoleRequest = null;
-        OrgMemberResponse response = api.updateMemberRoleV1OrgMembersUserIdPatch(userId, updateMemberRoleRequest);
+        OrgMemberResponse response = api.updateMemberRole(userId, updateMemberRoleRequest);
         // TODO: test validations
     }
 
