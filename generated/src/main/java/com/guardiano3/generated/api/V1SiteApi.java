@@ -78,7 +78,7 @@ public class V1SiteApi {
     }
 
     /**
-     * Build call for confirmSubscriptionV1SiteSubscribeConfirmPost
+     * Build call for confirmSubscription
      * @param subscriptionTokenRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -97,7 +97,7 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmSubscriptionV1SiteSubscribeConfirmPostCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call confirmSubscriptionCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,13 +143,13 @@ public class V1SiteApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call confirmSubscriptionV1SiteSubscribeConfirmPostValidateBeforeCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call confirmSubscriptionValidateBeforeCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'subscriptionTokenRequest' is set
         if (subscriptionTokenRequest == null) {
-            throw new ApiException("Missing the required parameter 'subscriptionTokenRequest' when calling confirmSubscriptionV1SiteSubscribeConfirmPost(Async)");
+            throw new ApiException("Missing the required parameter 'subscriptionTokenRequest' when calling confirmSubscription(Async)");
         }
 
-        return confirmSubscriptionV1SiteSubscribeConfirmPostCall(subscriptionTokenRequest, _callback);
+        return confirmSubscriptionCall(subscriptionTokenRequest, _callback);
 
     }
 
@@ -173,8 +173,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SubscriptionStatusResponse confirmSubscriptionV1SiteSubscribeConfirmPost(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
-        ApiResponse<SubscriptionStatusResponse> localVarResp = confirmSubscriptionV1SiteSubscribeConfirmPostWithHttpInfo(subscriptionTokenRequest);
+    public SubscriptionStatusResponse confirmSubscription(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
+        ApiResponse<SubscriptionStatusResponse> localVarResp = confirmSubscriptionWithHttpInfo(subscriptionTokenRequest);
         return localVarResp.getData();
     }
 
@@ -198,8 +198,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubscriptionStatusResponse> confirmSubscriptionV1SiteSubscribeConfirmPostWithHttpInfo(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
-        okhttp3.Call localVarCall = confirmSubscriptionV1SiteSubscribeConfirmPostValidateBeforeCall(subscriptionTokenRequest, null);
+    public ApiResponse<SubscriptionStatusResponse> confirmSubscriptionWithHttpInfo(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
+        okhttp3.Call localVarCall = confirmSubscriptionValidateBeforeCall(subscriptionTokenRequest, null);
         Type localVarReturnType = new TypeToken<SubscriptionStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -225,15 +225,15 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmSubscriptionV1SiteSubscribeConfirmPostAsync(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback<SubscriptionStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call confirmSubscriptionAsync(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback<SubscriptionStatusResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = confirmSubscriptionV1SiteSubscribeConfirmPostValidateBeforeCall(subscriptionTokenRequest, _callback);
+        okhttp3.Call localVarCall = confirmSubscriptionValidateBeforeCall(subscriptionTokenRequest, _callback);
         Type localVarReturnType = new TypeToken<SubscriptionStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for contactSalesV1SiteContactSalesPost
+     * Build call for contactSales
      * @param contactSalesRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -252,7 +252,7 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call contactSalesV1SiteContactSalesPostCall(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call contactSalesCall(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -298,13 +298,13 @@ public class V1SiteApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call contactSalesV1SiteContactSalesPostValidateBeforeCall(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call contactSalesValidateBeforeCall(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'contactSalesRequest' is set
         if (contactSalesRequest == null) {
-            throw new ApiException("Missing the required parameter 'contactSalesRequest' when calling contactSalesV1SiteContactSalesPost(Async)");
+            throw new ApiException("Missing the required parameter 'contactSalesRequest' when calling contactSales(Async)");
         }
 
-        return contactSalesV1SiteContactSalesPostCall(contactSalesRequest, _callback);
+        return contactSalesCall(contactSalesRequest, _callback);
 
     }
 
@@ -328,8 +328,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SiteAcceptedResponse contactSalesV1SiteContactSalesPost(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest) throws ApiException {
-        ApiResponse<SiteAcceptedResponse> localVarResp = contactSalesV1SiteContactSalesPostWithHttpInfo(contactSalesRequest);
+    public SiteAcceptedResponse contactSales(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest) throws ApiException {
+        ApiResponse<SiteAcceptedResponse> localVarResp = contactSalesWithHttpInfo(contactSalesRequest);
         return localVarResp.getData();
     }
 
@@ -353,8 +353,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SiteAcceptedResponse> contactSalesV1SiteContactSalesPostWithHttpInfo(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest) throws ApiException {
-        okhttp3.Call localVarCall = contactSalesV1SiteContactSalesPostValidateBeforeCall(contactSalesRequest, null);
+    public ApiResponse<SiteAcceptedResponse> contactSalesWithHttpInfo(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest) throws ApiException {
+        okhttp3.Call localVarCall = contactSalesValidateBeforeCall(contactSalesRequest, null);
         Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -380,15 +380,15 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call contactSalesV1SiteContactSalesPostAsync(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call contactSalesAsync(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = contactSalesV1SiteContactSalesPostValidateBeforeCall(contactSalesRequest, _callback);
+        okhttp3.Call localVarCall = contactSalesValidateBeforeCall(contactSalesRequest, _callback);
         Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for subscribeV1SiteSubscribePost
+     * Build call for subscribe
      * @param subscribeRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -407,7 +407,7 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscribeV1SiteSubscribePostCall(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call subscribeCall(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -453,13 +453,13 @@ public class V1SiteApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call subscribeV1SiteSubscribePostValidateBeforeCall(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call subscribeValidateBeforeCall(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'subscribeRequest' is set
         if (subscribeRequest == null) {
-            throw new ApiException("Missing the required parameter 'subscribeRequest' when calling subscribeV1SiteSubscribePost(Async)");
+            throw new ApiException("Missing the required parameter 'subscribeRequest' when calling subscribe(Async)");
         }
 
-        return subscribeV1SiteSubscribePostCall(subscribeRequest, _callback);
+        return subscribeCall(subscribeRequest, _callback);
 
     }
 
@@ -483,8 +483,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SiteAcceptedResponse subscribeV1SiteSubscribePost(@javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
-        ApiResponse<SiteAcceptedResponse> localVarResp = subscribeV1SiteSubscribePostWithHttpInfo(subscribeRequest);
+    public SiteAcceptedResponse subscribe(@javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
+        ApiResponse<SiteAcceptedResponse> localVarResp = subscribeWithHttpInfo(subscribeRequest);
         return localVarResp.getData();
     }
 
@@ -508,8 +508,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SiteAcceptedResponse> subscribeV1SiteSubscribePostWithHttpInfo(@javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
-        okhttp3.Call localVarCall = subscribeV1SiteSubscribePostValidateBeforeCall(subscribeRequest, null);
+    public ApiResponse<SiteAcceptedResponse> subscribeWithHttpInfo(@javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
+        okhttp3.Call localVarCall = subscribeValidateBeforeCall(subscribeRequest, null);
         Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -535,15 +535,15 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscribeV1SiteSubscribePostAsync(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call subscribeAsync(@javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = subscribeV1SiteSubscribePostValidateBeforeCall(subscribeRequest, _callback);
+        okhttp3.Call localVarCall = subscribeValidateBeforeCall(subscribeRequest, _callback);
         Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for unsubscribeV1SiteUnsubscribePost
+     * Build call for unsubscribe
      * @param subscriptionTokenRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -562,7 +562,7 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unsubscribeV1SiteUnsubscribePostCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call unsubscribeCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -608,13 +608,13 @@ public class V1SiteApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call unsubscribeV1SiteUnsubscribePostValidateBeforeCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call unsubscribeValidateBeforeCall(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'subscriptionTokenRequest' is set
         if (subscriptionTokenRequest == null) {
-            throw new ApiException("Missing the required parameter 'subscriptionTokenRequest' when calling unsubscribeV1SiteUnsubscribePost(Async)");
+            throw new ApiException("Missing the required parameter 'subscriptionTokenRequest' when calling unsubscribe(Async)");
         }
 
-        return unsubscribeV1SiteUnsubscribePostCall(subscriptionTokenRequest, _callback);
+        return unsubscribeCall(subscriptionTokenRequest, _callback);
 
     }
 
@@ -638,8 +638,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SubscriptionStatusResponse unsubscribeV1SiteUnsubscribePost(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
-        ApiResponse<SubscriptionStatusResponse> localVarResp = unsubscribeV1SiteUnsubscribePostWithHttpInfo(subscriptionTokenRequest);
+    public SubscriptionStatusResponse unsubscribe(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
+        ApiResponse<SubscriptionStatusResponse> localVarResp = unsubscribeWithHttpInfo(subscriptionTokenRequest);
         return localVarResp.getData();
     }
 
@@ -663,8 +663,8 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubscriptionStatusResponse> unsubscribeV1SiteUnsubscribePostWithHttpInfo(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
-        okhttp3.Call localVarCall = unsubscribeV1SiteUnsubscribePostValidateBeforeCall(subscriptionTokenRequest, null);
+    public ApiResponse<SubscriptionStatusResponse> unsubscribeWithHttpInfo(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest) throws ApiException {
+        okhttp3.Call localVarCall = unsubscribeValidateBeforeCall(subscriptionTokenRequest, null);
         Type localVarReturnType = new TypeToken<SubscriptionStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -690,9 +690,9 @@ public class V1SiteApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unsubscribeV1SiteUnsubscribePostAsync(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback<SubscriptionStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call unsubscribeAsync(@javax.annotation.Nonnull SubscriptionTokenRequest subscriptionTokenRequest, final ApiCallback<SubscriptionStatusResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = unsubscribeV1SiteUnsubscribePostValidateBeforeCall(subscriptionTokenRequest, _callback);
+        okhttp3.Call localVarCall = unsubscribeValidateBeforeCall(subscriptionTokenRequest, _callback);
         Type localVarReturnType = new TypeToken<SubscriptionStatusResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -88,7 +88,7 @@ public class V1AuthApi {
     }
 
     /**
-     * Build call for changePasswordV1AuthPasswordPost
+     * Build call for changePassword
      * @param passwordChangeRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -107,7 +107,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call changePasswordV1AuthPasswordPostCall(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call changePasswordCall(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,13 +153,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call changePasswordV1AuthPasswordPostValidateBeforeCall(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call changePasswordValidateBeforeCall(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'passwordChangeRequest' is set
         if (passwordChangeRequest == null) {
-            throw new ApiException("Missing the required parameter 'passwordChangeRequest' when calling changePasswordV1AuthPasswordPost(Async)");
+            throw new ApiException("Missing the required parameter 'passwordChangeRequest' when calling changePassword(Async)");
         }
 
-        return changePasswordV1AuthPasswordPostCall(passwordChangeRequest, _callback);
+        return changePasswordCall(passwordChangeRequest, _callback);
 
     }
 
@@ -182,8 +182,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void changePasswordV1AuthPasswordPost(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest) throws ApiException {
-        changePasswordV1AuthPasswordPostWithHttpInfo(passwordChangeRequest);
+    public void changePassword(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest) throws ApiException {
+        changePasswordWithHttpInfo(passwordChangeRequest);
     }
 
     /**
@@ -206,8 +206,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> changePasswordV1AuthPasswordPostWithHttpInfo(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest) throws ApiException {
-        okhttp3.Call localVarCall = changePasswordV1AuthPasswordPostValidateBeforeCall(passwordChangeRequest, null);
+    public ApiResponse<Void> changePasswordWithHttpInfo(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest) throws ApiException {
+        okhttp3.Call localVarCall = changePasswordValidateBeforeCall(passwordChangeRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -232,14 +232,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call changePasswordV1AuthPasswordPostAsync(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call changePasswordAsync(@javax.annotation.Nonnull PasswordChangeRequest passwordChangeRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = changePasswordV1AuthPasswordPostValidateBeforeCall(passwordChangeRequest, _callback);
+        okhttp3.Call localVarCall = changePasswordValidateBeforeCall(passwordChangeRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for confirmEmailChangeV1AuthEmailConfirmPost
+     * Build call for confirmEmailChange
      * @param tokenOnlyRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -258,7 +258,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmEmailChangeV1AuthEmailConfirmPostCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call confirmEmailChangeCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -304,13 +304,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call confirmEmailChangeV1AuthEmailConfirmPostValidateBeforeCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call confirmEmailChangeValidateBeforeCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tokenOnlyRequest' is set
         if (tokenOnlyRequest == null) {
-            throw new ApiException("Missing the required parameter 'tokenOnlyRequest' when calling confirmEmailChangeV1AuthEmailConfirmPost(Async)");
+            throw new ApiException("Missing the required parameter 'tokenOnlyRequest' when calling confirmEmailChange(Async)");
         }
 
-        return confirmEmailChangeV1AuthEmailConfirmPostCall(tokenOnlyRequest, _callback);
+        return confirmEmailChangeCall(tokenOnlyRequest, _callback);
 
     }
 
@@ -334,8 +334,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse confirmEmailChangeV1AuthEmailConfirmPost(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
-        ApiResponse<UserResponse> localVarResp = confirmEmailChangeV1AuthEmailConfirmPostWithHttpInfo(tokenOnlyRequest);
+    public UserResponse confirmEmailChange(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
+        ApiResponse<UserResponse> localVarResp = confirmEmailChangeWithHttpInfo(tokenOnlyRequest);
         return localVarResp.getData();
     }
 
@@ -359,8 +359,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> confirmEmailChangeV1AuthEmailConfirmPostWithHttpInfo(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
-        okhttp3.Call localVarCall = confirmEmailChangeV1AuthEmailConfirmPostValidateBeforeCall(tokenOnlyRequest, null);
+    public ApiResponse<UserResponse> confirmEmailChangeWithHttpInfo(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
+        okhttp3.Call localVarCall = confirmEmailChangeValidateBeforeCall(tokenOnlyRequest, null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -386,15 +386,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmEmailChangeV1AuthEmailConfirmPostAsync(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call confirmEmailChangeAsync(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback<UserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = confirmEmailChangeV1AuthEmailConfirmPostValidateBeforeCall(tokenOnlyRequest, _callback);
+        okhttp3.Call localVarCall = confirmEmailChangeValidateBeforeCall(tokenOnlyRequest, _callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for confirmPasswordResetV1AuthPasswordResetConfirmPost
+     * Build call for confirmPasswordReset
      * @param passwordResetConfirmRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -413,7 +413,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmPasswordResetV1AuthPasswordResetConfirmPostCall(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call confirmPasswordResetCall(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -459,13 +459,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call confirmPasswordResetV1AuthPasswordResetConfirmPostValidateBeforeCall(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call confirmPasswordResetValidateBeforeCall(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'passwordResetConfirmRequest' is set
         if (passwordResetConfirmRequest == null) {
-            throw new ApiException("Missing the required parameter 'passwordResetConfirmRequest' when calling confirmPasswordResetV1AuthPasswordResetConfirmPost(Async)");
+            throw new ApiException("Missing the required parameter 'passwordResetConfirmRequest' when calling confirmPasswordReset(Async)");
         }
 
-        return confirmPasswordResetV1AuthPasswordResetConfirmPostCall(passwordResetConfirmRequest, _callback);
+        return confirmPasswordResetCall(passwordResetConfirmRequest, _callback);
 
     }
 
@@ -488,8 +488,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void confirmPasswordResetV1AuthPasswordResetConfirmPost(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest) throws ApiException {
-        confirmPasswordResetV1AuthPasswordResetConfirmPostWithHttpInfo(passwordResetConfirmRequest);
+    public void confirmPasswordReset(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest) throws ApiException {
+        confirmPasswordResetWithHttpInfo(passwordResetConfirmRequest);
     }
 
     /**
@@ -512,8 +512,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> confirmPasswordResetV1AuthPasswordResetConfirmPostWithHttpInfo(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest) throws ApiException {
-        okhttp3.Call localVarCall = confirmPasswordResetV1AuthPasswordResetConfirmPostValidateBeforeCall(passwordResetConfirmRequest, null);
+    public ApiResponse<Void> confirmPasswordResetWithHttpInfo(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest) throws ApiException {
+        okhttp3.Call localVarCall = confirmPasswordResetValidateBeforeCall(passwordResetConfirmRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -538,14 +538,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call confirmPasswordResetV1AuthPasswordResetConfirmPostAsync(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call confirmPasswordResetAsync(@javax.annotation.Nonnull PasswordResetConfirmRequest passwordResetConfirmRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = confirmPasswordResetV1AuthPasswordResetConfirmPostValidateBeforeCall(passwordResetConfirmRequest, _callback);
+        okhttp3.Call localVarCall = confirmPasswordResetValidateBeforeCall(passwordResetConfirmRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for deleteAccountV1AuthDeleteAccountPost
+     * Build call for deleteAccount
      * @param accountDeleteRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -564,7 +564,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAccountV1AuthDeleteAccountPostCall(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAccountCall(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -610,13 +610,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAccountV1AuthDeleteAccountPostValidateBeforeCall(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAccountValidateBeforeCall(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'accountDeleteRequest' is set
         if (accountDeleteRequest == null) {
-            throw new ApiException("Missing the required parameter 'accountDeleteRequest' when calling deleteAccountV1AuthDeleteAccountPost(Async)");
+            throw new ApiException("Missing the required parameter 'accountDeleteRequest' when calling deleteAccount(Async)");
         }
 
-        return deleteAccountV1AuthDeleteAccountPostCall(accountDeleteRequest, _callback);
+        return deleteAccountCall(accountDeleteRequest, _callback);
 
     }
 
@@ -639,8 +639,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAccountV1AuthDeleteAccountPost(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest) throws ApiException {
-        deleteAccountV1AuthDeleteAccountPostWithHttpInfo(accountDeleteRequest);
+    public void deleteAccount(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest) throws ApiException {
+        deleteAccountWithHttpInfo(accountDeleteRequest);
     }
 
     /**
@@ -663,8 +663,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAccountV1AuthDeleteAccountPostWithHttpInfo(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest) throws ApiException {
-        okhttp3.Call localVarCall = deleteAccountV1AuthDeleteAccountPostValidateBeforeCall(accountDeleteRequest, null);
+    public ApiResponse<Void> deleteAccountWithHttpInfo(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest) throws ApiException {
+        okhttp3.Call localVarCall = deleteAccountValidateBeforeCall(accountDeleteRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -689,14 +689,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAccountV1AuthDeleteAccountPostAsync(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAccountAsync(@javax.annotation.Nonnull AccountDeleteRequest accountDeleteRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteAccountV1AuthDeleteAccountPostValidateBeforeCall(accountDeleteRequest, _callback);
+        okhttp3.Call localVarCall = deleteAccountValidateBeforeCall(accountDeleteRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for googleAuthV1AuthGooglePost
+     * Build call for googleAuth
      * @param googleAuthRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -715,7 +715,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call googleAuthV1AuthGooglePostCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call googleAuthCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -761,13 +761,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call googleAuthV1AuthGooglePostValidateBeforeCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call googleAuthValidateBeforeCall(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'googleAuthRequest' is set
         if (googleAuthRequest == null) {
-            throw new ApiException("Missing the required parameter 'googleAuthRequest' when calling googleAuthV1AuthGooglePost(Async)");
+            throw new ApiException("Missing the required parameter 'googleAuthRequest' when calling googleAuth(Async)");
         }
 
-        return googleAuthV1AuthGooglePostCall(googleAuthRequest, _callback);
+        return googleAuthCall(googleAuthRequest, _callback);
 
     }
 
@@ -791,8 +791,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public TokenResponse googleAuthV1AuthGooglePost(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
-        ApiResponse<TokenResponse> localVarResp = googleAuthV1AuthGooglePostWithHttpInfo(googleAuthRequest);
+    public TokenResponse googleAuth(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
+        ApiResponse<TokenResponse> localVarResp = googleAuthWithHttpInfo(googleAuthRequest);
         return localVarResp.getData();
     }
 
@@ -816,8 +816,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TokenResponse> googleAuthV1AuthGooglePostWithHttpInfo(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
-        okhttp3.Call localVarCall = googleAuthV1AuthGooglePostValidateBeforeCall(googleAuthRequest, null);
+    public ApiResponse<TokenResponse> googleAuthWithHttpInfo(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest) throws ApiException {
+        okhttp3.Call localVarCall = googleAuthValidateBeforeCall(googleAuthRequest, null);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -843,15 +843,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call googleAuthV1AuthGooglePostAsync(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
+    public okhttp3.Call googleAuthAsync(@javax.annotation.Nonnull GoogleAuthRequest googleAuthRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = googleAuthV1AuthGooglePostValidateBeforeCall(googleAuthRequest, _callback);
+        okhttp3.Call localVarCall = googleAuthValidateBeforeCall(googleAuthRequest, _callback);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listSessionsV1AuthSessionsGet
+     * Build call for listSessions
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -869,7 +869,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSessionsV1AuthSessionsGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSessionsCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -914,8 +914,8 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSessionsV1AuthSessionsGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return listSessionsV1AuthSessionsGetCall(_callback);
+    private okhttp3.Call listSessionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return listSessionsCall(_callback);
 
     }
 
@@ -938,8 +938,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SessionListResponse listSessionsV1AuthSessionsGet() throws ApiException {
-        ApiResponse<SessionListResponse> localVarResp = listSessionsV1AuthSessionsGetWithHttpInfo();
+    public SessionListResponse listSessions() throws ApiException {
+        ApiResponse<SessionListResponse> localVarResp = listSessionsWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -962,8 +962,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SessionListResponse> listSessionsV1AuthSessionsGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = listSessionsV1AuthSessionsGetValidateBeforeCall(null);
+    public ApiResponse<SessionListResponse> listSessionsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = listSessionsValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<SessionListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -988,15 +988,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSessionsV1AuthSessionsGetAsync(final ApiCallback<SessionListResponse> _callback) throws ApiException {
+    public okhttp3.Call listSessionsAsync(final ApiCallback<SessionListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSessionsV1AuthSessionsGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = listSessionsValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<SessionListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for loginV1AuthLoginPost
+     * Build call for login
      * @param loginRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1015,7 +1015,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call loginV1AuthLoginPostCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call loginCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1061,13 +1061,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call loginV1AuthLoginPostValidateBeforeCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call loginValidateBeforeCall(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'loginRequest' is set
         if (loginRequest == null) {
-            throw new ApiException("Missing the required parameter 'loginRequest' when calling loginV1AuthLoginPost(Async)");
+            throw new ApiException("Missing the required parameter 'loginRequest' when calling login(Async)");
         }
 
-        return loginV1AuthLoginPostCall(loginRequest, _callback);
+        return loginCall(loginRequest, _callback);
 
     }
 
@@ -1091,8 +1091,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public TokenResponse loginV1AuthLoginPost(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
-        ApiResponse<TokenResponse> localVarResp = loginV1AuthLoginPostWithHttpInfo(loginRequest);
+    public TokenResponse login(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
+        ApiResponse<TokenResponse> localVarResp = loginWithHttpInfo(loginRequest);
         return localVarResp.getData();
     }
 
@@ -1116,8 +1116,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TokenResponse> loginV1AuthLoginPostWithHttpInfo(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
-        okhttp3.Call localVarCall = loginV1AuthLoginPostValidateBeforeCall(loginRequest, null);
+    public ApiResponse<TokenResponse> loginWithHttpInfo(@javax.annotation.Nonnull LoginRequest loginRequest) throws ApiException {
+        okhttp3.Call localVarCall = loginValidateBeforeCall(loginRequest, null);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1143,15 +1143,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call loginV1AuthLoginPostAsync(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
+    public okhttp3.Call loginAsync(@javax.annotation.Nonnull LoginRequest loginRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = loginV1AuthLoginPostValidateBeforeCall(loginRequest, _callback);
+        okhttp3.Call localVarCall = loginValidateBeforeCall(loginRequest, _callback);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for logoutV1AuthLogoutPost
+     * Build call for logout
      * @param logoutRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1170,7 +1170,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logoutV1AuthLogoutPostCall(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call logoutCall(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1216,13 +1216,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call logoutV1AuthLogoutPostValidateBeforeCall(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call logoutValidateBeforeCall(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'logoutRequest' is set
         if (logoutRequest == null) {
-            throw new ApiException("Missing the required parameter 'logoutRequest' when calling logoutV1AuthLogoutPost(Async)");
+            throw new ApiException("Missing the required parameter 'logoutRequest' when calling logout(Async)");
         }
 
-        return logoutV1AuthLogoutPostCall(logoutRequest, _callback);
+        return logoutCall(logoutRequest, _callback);
 
     }
 
@@ -1245,8 +1245,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void logoutV1AuthLogoutPost(@javax.annotation.Nonnull LogoutRequest logoutRequest) throws ApiException {
-        logoutV1AuthLogoutPostWithHttpInfo(logoutRequest);
+    public void logout(@javax.annotation.Nonnull LogoutRequest logoutRequest) throws ApiException {
+        logoutWithHttpInfo(logoutRequest);
     }
 
     /**
@@ -1269,8 +1269,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> logoutV1AuthLogoutPostWithHttpInfo(@javax.annotation.Nonnull LogoutRequest logoutRequest) throws ApiException {
-        okhttp3.Call localVarCall = logoutV1AuthLogoutPostValidateBeforeCall(logoutRequest, null);
+    public ApiResponse<Void> logoutWithHttpInfo(@javax.annotation.Nonnull LogoutRequest logoutRequest) throws ApiException {
+        okhttp3.Call localVarCall = logoutValidateBeforeCall(logoutRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1295,14 +1295,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call logoutV1AuthLogoutPostAsync(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call logoutAsync(@javax.annotation.Nonnull LogoutRequest logoutRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = logoutV1AuthLogoutPostValidateBeforeCall(logoutRequest, _callback);
+        okhttp3.Call localVarCall = logoutValidateBeforeCall(logoutRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for meV1AuthMeGet
+     * Build call for me
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1320,7 +1320,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call meV1AuthMeGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call meCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1365,8 +1365,8 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call meV1AuthMeGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return meV1AuthMeGetCall(_callback);
+    private okhttp3.Call meValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return meCall(_callback);
 
     }
 
@@ -1389,8 +1389,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse meV1AuthMeGet() throws ApiException {
-        ApiResponse<UserResponse> localVarResp = meV1AuthMeGetWithHttpInfo();
+    public UserResponse me() throws ApiException {
+        ApiResponse<UserResponse> localVarResp = meWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -1413,8 +1413,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> meV1AuthMeGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = meV1AuthMeGetValidateBeforeCall(null);
+    public ApiResponse<UserResponse> meWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = meValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1439,15 +1439,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call meV1AuthMeGetAsync(final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call meAsync(final ApiCallback<UserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = meV1AuthMeGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = meValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for refreshV1AuthRefreshPost
+     * Build call for refresh
      * @param refreshRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1466,7 +1466,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refreshV1AuthRefreshPostCall(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call refreshCall(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1512,13 +1512,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refreshV1AuthRefreshPostValidateBeforeCall(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call refreshValidateBeforeCall(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'refreshRequest' is set
         if (refreshRequest == null) {
-            throw new ApiException("Missing the required parameter 'refreshRequest' when calling refreshV1AuthRefreshPost(Async)");
+            throw new ApiException("Missing the required parameter 'refreshRequest' when calling refresh(Async)");
         }
 
-        return refreshV1AuthRefreshPostCall(refreshRequest, _callback);
+        return refreshCall(refreshRequest, _callback);
 
     }
 
@@ -1542,8 +1542,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public TokenResponse refreshV1AuthRefreshPost(@javax.annotation.Nonnull RefreshRequest refreshRequest) throws ApiException {
-        ApiResponse<TokenResponse> localVarResp = refreshV1AuthRefreshPostWithHttpInfo(refreshRequest);
+    public TokenResponse refresh(@javax.annotation.Nonnull RefreshRequest refreshRequest) throws ApiException {
+        ApiResponse<TokenResponse> localVarResp = refreshWithHttpInfo(refreshRequest);
         return localVarResp.getData();
     }
 
@@ -1567,8 +1567,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TokenResponse> refreshV1AuthRefreshPostWithHttpInfo(@javax.annotation.Nonnull RefreshRequest refreshRequest) throws ApiException {
-        okhttp3.Call localVarCall = refreshV1AuthRefreshPostValidateBeforeCall(refreshRequest, null);
+    public ApiResponse<TokenResponse> refreshWithHttpInfo(@javax.annotation.Nonnull RefreshRequest refreshRequest) throws ApiException {
+        okhttp3.Call localVarCall = refreshValidateBeforeCall(refreshRequest, null);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1594,15 +1594,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refreshV1AuthRefreshPostAsync(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
+    public okhttp3.Call refreshAsync(@javax.annotation.Nonnull RefreshRequest refreshRequest, final ApiCallback<TokenResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = refreshV1AuthRefreshPostValidateBeforeCall(refreshRequest, _callback);
+        okhttp3.Call localVarCall = refreshValidateBeforeCall(refreshRequest, _callback);
         Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for registerV1AuthRegisterPost
+     * Build call for register
      * @param registerRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1621,7 +1621,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerV1AuthRegisterPostCall(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerCall(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1667,13 +1667,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerV1AuthRegisterPostValidateBeforeCall(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerValidateBeforeCall(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'registerRequest' is set
         if (registerRequest == null) {
-            throw new ApiException("Missing the required parameter 'registerRequest' when calling registerV1AuthRegisterPost(Async)");
+            throw new ApiException("Missing the required parameter 'registerRequest' when calling register(Async)");
         }
 
-        return registerV1AuthRegisterPostCall(registerRequest, _callback);
+        return registerCall(registerRequest, _callback);
 
     }
 
@@ -1697,8 +1697,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AcceptedResponse registerV1AuthRegisterPost(@javax.annotation.Nonnull RegisterRequest registerRequest) throws ApiException {
-        ApiResponse<AcceptedResponse> localVarResp = registerV1AuthRegisterPostWithHttpInfo(registerRequest);
+    public AcceptedResponse register(@javax.annotation.Nonnull RegisterRequest registerRequest) throws ApiException {
+        ApiResponse<AcceptedResponse> localVarResp = registerWithHttpInfo(registerRequest);
         return localVarResp.getData();
     }
 
@@ -1722,8 +1722,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AcceptedResponse> registerV1AuthRegisterPostWithHttpInfo(@javax.annotation.Nonnull RegisterRequest registerRequest) throws ApiException {
-        okhttp3.Call localVarCall = registerV1AuthRegisterPostValidateBeforeCall(registerRequest, null);
+    public ApiResponse<AcceptedResponse> registerWithHttpInfo(@javax.annotation.Nonnull RegisterRequest registerRequest) throws ApiException {
+        okhttp3.Call localVarCall = registerValidateBeforeCall(registerRequest, null);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1749,15 +1749,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerV1AuthRegisterPostAsync(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call registerAsync(@javax.annotation.Nonnull RegisterRequest registerRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerV1AuthRegisterPostValidateBeforeCall(registerRequest, _callback);
+        okhttp3.Call localVarCall = registerValidateBeforeCall(registerRequest, _callback);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for requestEmailChangeV1AuthEmailPost
+     * Build call for requestEmailChange
      * @param emailChangeRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1776,7 +1776,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestEmailChangeV1AuthEmailPostCall(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call requestEmailChangeCall(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1822,13 +1822,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call requestEmailChangeV1AuthEmailPostValidateBeforeCall(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call requestEmailChangeValidateBeforeCall(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'emailChangeRequest' is set
         if (emailChangeRequest == null) {
-            throw new ApiException("Missing the required parameter 'emailChangeRequest' when calling requestEmailChangeV1AuthEmailPost(Async)");
+            throw new ApiException("Missing the required parameter 'emailChangeRequest' when calling requestEmailChange(Async)");
         }
 
-        return requestEmailChangeV1AuthEmailPostCall(emailChangeRequest, _callback);
+        return requestEmailChangeCall(emailChangeRequest, _callback);
 
     }
 
@@ -1852,8 +1852,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AcceptedResponse requestEmailChangeV1AuthEmailPost(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest) throws ApiException {
-        ApiResponse<AcceptedResponse> localVarResp = requestEmailChangeV1AuthEmailPostWithHttpInfo(emailChangeRequest);
+    public AcceptedResponse requestEmailChange(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest) throws ApiException {
+        ApiResponse<AcceptedResponse> localVarResp = requestEmailChangeWithHttpInfo(emailChangeRequest);
         return localVarResp.getData();
     }
 
@@ -1877,8 +1877,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AcceptedResponse> requestEmailChangeV1AuthEmailPostWithHttpInfo(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest) throws ApiException {
-        okhttp3.Call localVarCall = requestEmailChangeV1AuthEmailPostValidateBeforeCall(emailChangeRequest, null);
+    public ApiResponse<AcceptedResponse> requestEmailChangeWithHttpInfo(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest) throws ApiException {
+        okhttp3.Call localVarCall = requestEmailChangeValidateBeforeCall(emailChangeRequest, null);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1904,15 +1904,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestEmailChangeV1AuthEmailPostAsync(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call requestEmailChangeAsync(@javax.annotation.Nonnull EmailChangeRequest emailChangeRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = requestEmailChangeV1AuthEmailPostValidateBeforeCall(emailChangeRequest, _callback);
+        okhttp3.Call localVarCall = requestEmailChangeValidateBeforeCall(emailChangeRequest, _callback);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for requestPasswordResetV1AuthPasswordResetPost
+     * Build call for requestPasswordReset
      * @param emailOnlyRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1931,7 +1931,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestPasswordResetV1AuthPasswordResetPostCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call requestPasswordResetCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1977,13 +1977,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call requestPasswordResetV1AuthPasswordResetPostValidateBeforeCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call requestPasswordResetValidateBeforeCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'emailOnlyRequest' is set
         if (emailOnlyRequest == null) {
-            throw new ApiException("Missing the required parameter 'emailOnlyRequest' when calling requestPasswordResetV1AuthPasswordResetPost(Async)");
+            throw new ApiException("Missing the required parameter 'emailOnlyRequest' when calling requestPasswordReset(Async)");
         }
 
-        return requestPasswordResetV1AuthPasswordResetPostCall(emailOnlyRequest, _callback);
+        return requestPasswordResetCall(emailOnlyRequest, _callback);
 
     }
 
@@ -2007,8 +2007,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AcceptedResponse requestPasswordResetV1AuthPasswordResetPost(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
-        ApiResponse<AcceptedResponse> localVarResp = requestPasswordResetV1AuthPasswordResetPostWithHttpInfo(emailOnlyRequest);
+    public AcceptedResponse requestPasswordReset(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
+        ApiResponse<AcceptedResponse> localVarResp = requestPasswordResetWithHttpInfo(emailOnlyRequest);
         return localVarResp.getData();
     }
 
@@ -2032,8 +2032,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AcceptedResponse> requestPasswordResetV1AuthPasswordResetPostWithHttpInfo(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
-        okhttp3.Call localVarCall = requestPasswordResetV1AuthPasswordResetPostValidateBeforeCall(emailOnlyRequest, null);
+    public ApiResponse<AcceptedResponse> requestPasswordResetWithHttpInfo(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
+        okhttp3.Call localVarCall = requestPasswordResetValidateBeforeCall(emailOnlyRequest, null);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2059,15 +2059,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call requestPasswordResetV1AuthPasswordResetPostAsync(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call requestPasswordResetAsync(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = requestPasswordResetV1AuthPasswordResetPostValidateBeforeCall(emailOnlyRequest, _callback);
+        okhttp3.Call localVarCall = requestPasswordResetValidateBeforeCall(emailOnlyRequest, _callback);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for resendVerificationV1AuthResendVerificationPost
+     * Build call for resendVerification
      * @param emailOnlyRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2086,7 +2086,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resendVerificationV1AuthResendVerificationPostCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resendVerificationCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2132,13 +2132,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resendVerificationV1AuthResendVerificationPostValidateBeforeCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resendVerificationValidateBeforeCall(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'emailOnlyRequest' is set
         if (emailOnlyRequest == null) {
-            throw new ApiException("Missing the required parameter 'emailOnlyRequest' when calling resendVerificationV1AuthResendVerificationPost(Async)");
+            throw new ApiException("Missing the required parameter 'emailOnlyRequest' when calling resendVerification(Async)");
         }
 
-        return resendVerificationV1AuthResendVerificationPostCall(emailOnlyRequest, _callback);
+        return resendVerificationCall(emailOnlyRequest, _callback);
 
     }
 
@@ -2162,8 +2162,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public AcceptedResponse resendVerificationV1AuthResendVerificationPost(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
-        ApiResponse<AcceptedResponse> localVarResp = resendVerificationV1AuthResendVerificationPostWithHttpInfo(emailOnlyRequest);
+    public AcceptedResponse resendVerification(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
+        ApiResponse<AcceptedResponse> localVarResp = resendVerificationWithHttpInfo(emailOnlyRequest);
         return localVarResp.getData();
     }
 
@@ -2187,8 +2187,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AcceptedResponse> resendVerificationV1AuthResendVerificationPostWithHttpInfo(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
-        okhttp3.Call localVarCall = resendVerificationV1AuthResendVerificationPostValidateBeforeCall(emailOnlyRequest, null);
+    public ApiResponse<AcceptedResponse> resendVerificationWithHttpInfo(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest) throws ApiException {
+        okhttp3.Call localVarCall = resendVerificationValidateBeforeCall(emailOnlyRequest, null);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2214,15 +2214,15 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resendVerificationV1AuthResendVerificationPostAsync(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call resendVerificationAsync(@javax.annotation.Nonnull EmailOnlyRequest emailOnlyRequest, final ApiCallback<AcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = resendVerificationV1AuthResendVerificationPostValidateBeforeCall(emailOnlyRequest, _callback);
+        okhttp3.Call localVarCall = resendVerificationValidateBeforeCall(emailOnlyRequest, _callback);
         Type localVarReturnType = new TypeToken<AcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for revokeOtherSessionsV1AuthSessionsDelete
+     * Build call for revokeOtherSessions
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2240,7 +2240,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeOtherSessionsV1AuthSessionsDeleteCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call revokeOtherSessionsCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2285,8 +2285,8 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call revokeOtherSessionsV1AuthSessionsDeleteValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return revokeOtherSessionsV1AuthSessionsDeleteCall(_callback);
+    private okhttp3.Call revokeOtherSessionsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return revokeOtherSessionsCall(_callback);
 
     }
 
@@ -2308,8 +2308,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void revokeOtherSessionsV1AuthSessionsDelete() throws ApiException {
-        revokeOtherSessionsV1AuthSessionsDeleteWithHttpInfo();
+    public void revokeOtherSessions() throws ApiException {
+        revokeOtherSessionsWithHttpInfo();
     }
 
     /**
@@ -2331,8 +2331,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> revokeOtherSessionsV1AuthSessionsDeleteWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = revokeOtherSessionsV1AuthSessionsDeleteValidateBeforeCall(null);
+    public ApiResponse<Void> revokeOtherSessionsWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = revokeOtherSessionsValidateBeforeCall(null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -2356,14 +2356,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeOtherSessionsV1AuthSessionsDeleteAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call revokeOtherSessionsAsync(final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = revokeOtherSessionsV1AuthSessionsDeleteValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = revokeOtherSessionsValidateBeforeCall(_callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for revokeSessionV1AuthSessionsSessionIdDelete
+     * Build call for revokeSession
      * @param sessionId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2383,7 +2383,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeSessionV1AuthSessionsSessionIdDeleteCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call revokeSessionCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2429,13 +2429,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call revokeSessionV1AuthSessionsSessionIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call revokeSessionValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
-            throw new ApiException("Missing the required parameter 'sessionId' when calling revokeSessionV1AuthSessionsSessionIdDelete(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling revokeSession(Async)");
         }
 
-        return revokeSessionV1AuthSessionsSessionIdDeleteCall(sessionId, _callback);
+        return revokeSessionCall(sessionId, _callback);
 
     }
 
@@ -2459,8 +2459,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void revokeSessionV1AuthSessionsSessionIdDelete(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        revokeSessionV1AuthSessionsSessionIdDeleteWithHttpInfo(sessionId);
+    public void revokeSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        revokeSessionWithHttpInfo(sessionId);
     }
 
     /**
@@ -2484,8 +2484,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> revokeSessionV1AuthSessionsSessionIdDeleteWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        okhttp3.Call localVarCall = revokeSessionV1AuthSessionsSessionIdDeleteValidateBeforeCall(sessionId, null);
+    public ApiResponse<Void> revokeSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        okhttp3.Call localVarCall = revokeSessionValidateBeforeCall(sessionId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -2511,14 +2511,14 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call revokeSessionV1AuthSessionsSessionIdDeleteAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call revokeSessionAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = revokeSessionV1AuthSessionsSessionIdDeleteValidateBeforeCall(sessionId, _callback);
+        okhttp3.Call localVarCall = revokeSessionValidateBeforeCall(sessionId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for verifyEmailV1AuthVerifyEmailPost
+     * Build call for verifyEmail
      * @param tokenOnlyRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2537,7 +2537,7 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyEmailV1AuthVerifyEmailPostCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifyEmailCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2583,13 +2583,13 @@ public class V1AuthApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyEmailV1AuthVerifyEmailPostValidateBeforeCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call verifyEmailValidateBeforeCall(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tokenOnlyRequest' is set
         if (tokenOnlyRequest == null) {
-            throw new ApiException("Missing the required parameter 'tokenOnlyRequest' when calling verifyEmailV1AuthVerifyEmailPost(Async)");
+            throw new ApiException("Missing the required parameter 'tokenOnlyRequest' when calling verifyEmail(Async)");
         }
 
-        return verifyEmailV1AuthVerifyEmailPostCall(tokenOnlyRequest, _callback);
+        return verifyEmailCall(tokenOnlyRequest, _callback);
 
     }
 
@@ -2613,8 +2613,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse verifyEmailV1AuthVerifyEmailPost(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
-        ApiResponse<UserResponse> localVarResp = verifyEmailV1AuthVerifyEmailPostWithHttpInfo(tokenOnlyRequest);
+    public UserResponse verifyEmail(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
+        ApiResponse<UserResponse> localVarResp = verifyEmailWithHttpInfo(tokenOnlyRequest);
         return localVarResp.getData();
     }
 
@@ -2638,8 +2638,8 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> verifyEmailV1AuthVerifyEmailPostWithHttpInfo(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
-        okhttp3.Call localVarCall = verifyEmailV1AuthVerifyEmailPostValidateBeforeCall(tokenOnlyRequest, null);
+    public ApiResponse<UserResponse> verifyEmailWithHttpInfo(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest) throws ApiException {
+        okhttp3.Call localVarCall = verifyEmailValidateBeforeCall(tokenOnlyRequest, null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2665,9 +2665,9 @@ public class V1AuthApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyEmailV1AuthVerifyEmailPostAsync(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call verifyEmailAsync(@javax.annotation.Nonnull TokenOnlyRequest tokenOnlyRequest, final ApiCallback<UserResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifyEmailV1AuthVerifyEmailPostValidateBeforeCall(tokenOnlyRequest, _callback);
+        okhttp3.Call localVarCall = verifyEmailValidateBeforeCall(tokenOnlyRequest, _callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

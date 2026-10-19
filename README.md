@@ -80,7 +80,7 @@ import com.guardiano3.generated.api.V1SessionsApi;
 
 V1SessionsApi sessions = new V1SessionsApi(apiClient);
 try {
-    sessions.getSessionV1SessionsSessionIdGet("nope");
+    sessions.getSession("nope");
 } catch (ApiException e) {
     Guardiano3Exception error = Errors.from(
             e.getCode(), e.getResponseBody(),
@@ -163,7 +163,7 @@ and safe methods get none.
 import com.guardiano3.sdk.Pagination;
 
 for (var entry : Pagination.<Object>iterate(cursor -> {
-    var page = sessions.listHistoryV1HistoryGet(cursor, 50);
+    var page = sessions.listHistory(cursor, 50);
     return new Pagination.Page<>(page.getItems(), page.getNextCursor());
 })) {
     System.out.println(entry);
@@ -190,7 +190,7 @@ import com.guardiano3.sdk.LiveSession;
 import com.google.gson.JsonObject;
 
 // 1. Create a session via REST (using the generated API)
-// String sessionId = sessions.createSessionV1SessionsPost(...).getId();
+// String sessionId = sessions.createSession(...).getId();
 
 // 2. Open the live channels
 LiveSession live = new LiveSession.Builder()

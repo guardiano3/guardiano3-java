@@ -44,10 +44,10 @@ public class V1SessionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createSessionV1SessionsPostTest() throws ApiException {
+    public void createSessionTest() throws ApiException {
         SessionCreateRequest sessionCreateRequest = null;
         String idempotencyKey = null;
-        SessionCreatedResponse response = api.createSessionV1SessionsPost(sessionCreateRequest, idempotencyKey);
+        SessionCreatedResponse response = api.createSession(sessionCreateRequest, idempotencyKey);
         // TODO: test validations
     }
 
@@ -57,9 +57,9 @@ public class V1SessionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getSessionV1SessionsSessionIdGetTest() throws ApiException {
+    public void getSessionTest() throws ApiException {
         String sessionId = null;
-        SessionResponse response = api.getSessionV1SessionsSessionIdGet(sessionId);
+        SessionResponse response = api.getSession(sessionId);
         // TODO: test validations
     }
 
@@ -71,10 +71,10 @@ public class V1SessionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listHistoryV1HistoryGetTest() throws ApiException {
+    public void listHistoryTest() throws ApiException {
         String cursor = null;
         Integer limit = null;
-        HistoryPage response = api.listHistoryV1HistoryGet(cursor, limit);
+        HistoryPage response = api.listHistory(cursor, limit);
         // TODO: test validations
     }
 
@@ -84,9 +84,9 @@ public class V1SessionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void stopSessionV1SessionsSessionIdStopPostTest() throws ApiException {
+    public void stopSessionTest() throws ApiException {
         String sessionId = null;
-        SessionResponse response = api.stopSessionV1SessionsSessionIdStopPost(sessionId);
+        SessionResponse response = api.stopSession(sessionId);
         // TODO: test validations
     }
 
@@ -98,11 +98,11 @@ public class V1SessionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void submitFeedbackV1SessionsSessionIdFeedbackPostTest() throws ApiException {
+    public void submitFeedbackTest() throws ApiException {
         String sessionId = null;
         FeedbackRequest feedbackRequest = null;
         String idempotencyKey = null;
-        api.submitFeedbackV1SessionsSessionIdFeedbackPost(sessionId, feedbackRequest, idempotencyKey);
+        api.submitFeedback(sessionId, feedbackRequest, idempotencyKey);
         // TODO: test validations
     }
 

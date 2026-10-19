@@ -78,7 +78,7 @@ public class V1SessionsApi {
     }
 
     /**
-     * Build call for createSessionV1SessionsPost
+     * Build call for createSession
      * @param sessionCreateRequest  (required)
      * @param idempotencyKey  (optional)
      * @param _callback Callback for upload/download progress
@@ -98,7 +98,7 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSessionV1SessionsPostCall(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSessionCall(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,13 +149,13 @@ public class V1SessionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSessionV1SessionsPostValidateBeforeCall(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSessionValidateBeforeCall(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sessionCreateRequest' is set
         if (sessionCreateRequest == null) {
-            throw new ApiException("Missing the required parameter 'sessionCreateRequest' when calling createSessionV1SessionsPost(Async)");
+            throw new ApiException("Missing the required parameter 'sessionCreateRequest' when calling createSession(Async)");
         }
 
-        return createSessionV1SessionsPostCall(sessionCreateRequest, idempotencyKey, _callback);
+        return createSessionCall(sessionCreateRequest, idempotencyKey, _callback);
 
     }
 
@@ -180,8 +180,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SessionCreatedResponse createSessionV1SessionsPost(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        ApiResponse<SessionCreatedResponse> localVarResp = createSessionV1SessionsPostWithHttpInfo(sessionCreateRequest, idempotencyKey);
+    public SessionCreatedResponse createSession(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        ApiResponse<SessionCreatedResponse> localVarResp = createSessionWithHttpInfo(sessionCreateRequest, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -206,8 +206,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SessionCreatedResponse> createSessionV1SessionsPostWithHttpInfo(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = createSessionV1SessionsPostValidateBeforeCall(sessionCreateRequest, idempotencyKey, null);
+    public ApiResponse<SessionCreatedResponse> createSessionWithHttpInfo(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createSessionValidateBeforeCall(sessionCreateRequest, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<SessionCreatedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -234,15 +234,15 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSessionV1SessionsPostAsync(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<SessionCreatedResponse> _callback) throws ApiException {
+    public okhttp3.Call createSessionAsync(@javax.annotation.Nonnull SessionCreateRequest sessionCreateRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<SessionCreatedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createSessionV1SessionsPostValidateBeforeCall(sessionCreateRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = createSessionValidateBeforeCall(sessionCreateRequest, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<SessionCreatedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getSessionV1SessionsSessionIdGet
+     * Build call for getSession
      * @param sessionId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -262,7 +262,7 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSessionV1SessionsSessionIdGetCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSessionCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -308,13 +308,13 @@ public class V1SessionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSessionV1SessionsSessionIdGetValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSessionValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
-            throw new ApiException("Missing the required parameter 'sessionId' when calling getSessionV1SessionsSessionIdGet(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling getSession(Async)");
         }
 
-        return getSessionV1SessionsSessionIdGetCall(sessionId, _callback);
+        return getSessionCall(sessionId, _callback);
 
     }
 
@@ -339,8 +339,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SessionResponse getSessionV1SessionsSessionIdGet(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        ApiResponse<SessionResponse> localVarResp = getSessionV1SessionsSessionIdGetWithHttpInfo(sessionId);
+    public SessionResponse getSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        ApiResponse<SessionResponse> localVarResp = getSessionWithHttpInfo(sessionId);
         return localVarResp.getData();
     }
 
@@ -365,8 +365,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SessionResponse> getSessionV1SessionsSessionIdGetWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        okhttp3.Call localVarCall = getSessionV1SessionsSessionIdGetValidateBeforeCall(sessionId, null);
+    public ApiResponse<SessionResponse> getSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        okhttp3.Call localVarCall = getSessionValidateBeforeCall(sessionId, null);
         Type localVarReturnType = new TypeToken<SessionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -393,15 +393,15 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSessionV1SessionsSessionIdGetAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<SessionResponse> _callback) throws ApiException {
+    public okhttp3.Call getSessionAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<SessionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSessionV1SessionsSessionIdGetValidateBeforeCall(sessionId, _callback);
+        okhttp3.Call localVarCall = getSessionValidateBeforeCall(sessionId, _callback);
         Type localVarReturnType = new TypeToken<SessionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listHistoryV1HistoryGet
+     * Build call for listHistory
      * @param cursor  (optional)
      * @param limit  (optional)
      * @param _callback Callback for upload/download progress
@@ -421,7 +421,7 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listHistoryV1HistoryGetCall(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listHistoryCall(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -474,8 +474,8 @@ public class V1SessionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listHistoryV1HistoryGetValidateBeforeCall(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
-        return listHistoryV1HistoryGetCall(cursor, limit, _callback);
+    private okhttp3.Call listHistoryValidateBeforeCall(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        return listHistoryCall(cursor, limit, _callback);
 
     }
 
@@ -500,8 +500,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public HistoryPage listHistoryV1HistoryGet(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<HistoryPage> localVarResp = listHistoryV1HistoryGetWithHttpInfo(cursor, limit);
+    public HistoryPage listHistory(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<HistoryPage> localVarResp = listHistoryWithHttpInfo(cursor, limit);
         return localVarResp.getData();
     }
 
@@ -526,8 +526,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HistoryPage> listHistoryV1HistoryGetWithHttpInfo(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = listHistoryV1HistoryGetValidateBeforeCall(cursor, limit, null);
+    public ApiResponse<HistoryPage> listHistoryWithHttpInfo(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = listHistoryValidateBeforeCall(cursor, limit, null);
         Type localVarReturnType = new TypeToken<HistoryPage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -554,15 +554,15 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listHistoryV1HistoryGetAsync(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback<HistoryPage> _callback) throws ApiException {
+    public okhttp3.Call listHistoryAsync(@javax.annotation.Nullable String cursor, @javax.annotation.Nullable Integer limit, final ApiCallback<HistoryPage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listHistoryV1HistoryGetValidateBeforeCall(cursor, limit, _callback);
+        okhttp3.Call localVarCall = listHistoryValidateBeforeCall(cursor, limit, _callback);
         Type localVarReturnType = new TypeToken<HistoryPage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for stopSessionV1SessionsSessionIdStopPost
+     * Build call for stopSession
      * @param sessionId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -582,7 +582,7 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call stopSessionV1SessionsSessionIdStopPostCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call stopSessionCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -628,13 +628,13 @@ public class V1SessionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call stopSessionV1SessionsSessionIdStopPostValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call stopSessionValidateBeforeCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
-            throw new ApiException("Missing the required parameter 'sessionId' when calling stopSessionV1SessionsSessionIdStopPost(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling stopSession(Async)");
         }
 
-        return stopSessionV1SessionsSessionIdStopPostCall(sessionId, _callback);
+        return stopSessionCall(sessionId, _callback);
 
     }
 
@@ -659,8 +659,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public SessionResponse stopSessionV1SessionsSessionIdStopPost(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        ApiResponse<SessionResponse> localVarResp = stopSessionV1SessionsSessionIdStopPostWithHttpInfo(sessionId);
+    public SessionResponse stopSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        ApiResponse<SessionResponse> localVarResp = stopSessionWithHttpInfo(sessionId);
         return localVarResp.getData();
     }
 
@@ -685,8 +685,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SessionResponse> stopSessionV1SessionsSessionIdStopPostWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
-        okhttp3.Call localVarCall = stopSessionV1SessionsSessionIdStopPostValidateBeforeCall(sessionId, null);
+    public ApiResponse<SessionResponse> stopSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
+        okhttp3.Call localVarCall = stopSessionValidateBeforeCall(sessionId, null);
         Type localVarReturnType = new TypeToken<SessionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -713,15 +713,15 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call stopSessionV1SessionsSessionIdStopPostAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<SessionResponse> _callback) throws ApiException {
+    public okhttp3.Call stopSessionAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<SessionResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = stopSessionV1SessionsSessionIdStopPostValidateBeforeCall(sessionId, _callback);
+        okhttp3.Call localVarCall = stopSessionValidateBeforeCall(sessionId, _callback);
         Type localVarReturnType = new TypeToken<SessionResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for submitFeedbackV1SessionsSessionIdFeedbackPost
+     * Build call for submitFeedback
      * @param sessionId  (required)
      * @param feedbackRequest  (required)
      * @param idempotencyKey  (optional)
@@ -743,7 +743,7 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call submitFeedbackV1SessionsSessionIdFeedbackPostCall(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call submitFeedbackCall(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -795,18 +795,18 @@ public class V1SessionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call submitFeedbackV1SessionsSessionIdFeedbackPostValidateBeforeCall(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call submitFeedbackValidateBeforeCall(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
-            throw new ApiException("Missing the required parameter 'sessionId' when calling submitFeedbackV1SessionsSessionIdFeedbackPost(Async)");
+            throw new ApiException("Missing the required parameter 'sessionId' when calling submitFeedback(Async)");
         }
 
         // verify the required parameter 'feedbackRequest' is set
         if (feedbackRequest == null) {
-            throw new ApiException("Missing the required parameter 'feedbackRequest' when calling submitFeedbackV1SessionsSessionIdFeedbackPost(Async)");
+            throw new ApiException("Missing the required parameter 'feedbackRequest' when calling submitFeedback(Async)");
         }
 
-        return submitFeedbackV1SessionsSessionIdFeedbackPostCall(sessionId, feedbackRequest, idempotencyKey, _callback);
+        return submitFeedbackCall(sessionId, feedbackRequest, idempotencyKey, _callback);
 
     }
 
@@ -832,8 +832,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public void submitFeedbackV1SessionsSessionIdFeedbackPost(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        submitFeedbackV1SessionsSessionIdFeedbackPostWithHttpInfo(sessionId, feedbackRequest, idempotencyKey);
+    public void submitFeedback(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        submitFeedbackWithHttpInfo(sessionId, feedbackRequest, idempotencyKey);
     }
 
     /**
@@ -859,8 +859,8 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> submitFeedbackV1SessionsSessionIdFeedbackPostWithHttpInfo(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
-        okhttp3.Call localVarCall = submitFeedbackV1SessionsSessionIdFeedbackPostValidateBeforeCall(sessionId, feedbackRequest, idempotencyKey, null);
+    public ApiResponse<Void> submitFeedbackWithHttpInfo(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = submitFeedbackValidateBeforeCall(sessionId, feedbackRequest, idempotencyKey, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -888,9 +888,9 @@ public class V1SessionsApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call submitFeedbackV1SessionsSessionIdFeedbackPostAsync(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call submitFeedbackAsync(@javax.annotation.Nonnull String sessionId, @javax.annotation.Nonnull FeedbackRequest feedbackRequest, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = submitFeedbackV1SessionsSessionIdFeedbackPostValidateBeforeCall(sessionId, feedbackRequest, idempotencyKey, _callback);
+        okhttp3.Call localVarCall = submitFeedbackValidateBeforeCall(sessionId, feedbackRequest, idempotencyKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

@@ -106,10 +106,10 @@ public class Example {
     String window = "24h"; // String | Rolling window, ending now.
     String environment = "live"; // String | 
     try {
-      AnalyticsResponse result = apiInstance.getAnalyticsV1AnalyticsGet(window, environment);
+      AnalyticsResponse result = apiInstance.getAnalytics(window, environment);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling V1AccountApi#getAnalyticsV1AnalyticsGet");
+      System.err.println("Exception when calling V1AccountApi#getAnalytics");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -126,59 +126,59 @@ All URIs are relative to *https://api.guardiano3.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*V1AccountApi* | [**getAnalyticsV1AnalyticsGet**](docs/V1AccountApi.md#getAnalyticsV1AnalyticsGet) | **GET** /v1/analytics | Your organization&#39;s analytics
-*V1AccountApi* | [**getProfileV1UserProfileGet**](docs/V1AccountApi.md#getProfileV1UserProfileGet) | **GET** /v1/user/profile | Your profile
-*V1AccountApi* | [**updateProfileV1UserProfilePatch**](docs/V1AccountApi.md#updateProfileV1UserProfilePatch) | **PATCH** /v1/user/profile | Update your profile
-*V1AnalysisApi* | [**analyzeAudioV1AnalyzeAudioPost**](docs/V1AnalysisApi.md#analyzeAudioV1AnalyzeAudioPost) | **POST** /v1/analyze/audio | Transcribe and score an audio clip
-*V1AnalysisApi* | [**analyzeTextV1AnalyzeTextPost**](docs/V1AnalysisApi.md#analyzeTextV1AnalyzeTextPost) | **POST** /v1/analyze/text | Score a transcript
-*V1ApiKeysApi* | [**createApiKeyV1ApiKeysPost**](docs/V1ApiKeysApi.md#createApiKeyV1ApiKeysPost) | **POST** /v1/api-keys | Create an API key
-*V1ApiKeysApi* | [**getApiKeyV1ApiKeysKeyIdGet**](docs/V1ApiKeysApi.md#getApiKeyV1ApiKeysKeyIdGet) | **GET** /v1/api-keys/{key_id} | Get one API key&#39;s metadata
-*V1ApiKeysApi* | [**listApiKeysV1ApiKeysGet**](docs/V1ApiKeysApi.md#listApiKeysV1ApiKeysGet) | **GET** /v1/api-keys | List your API keys
-*V1ApiKeysApi* | [**listScopesV1ApiKeysScopesGet**](docs/V1ApiKeysApi.md#listScopesV1ApiKeysScopesGet) | **GET** /v1/api-keys/scopes | List the available scopes
-*V1ApiKeysApi* | [**revokeApiKeyV1ApiKeysKeyIdDelete**](docs/V1ApiKeysApi.md#revokeApiKeyV1ApiKeysKeyIdDelete) | **DELETE** /v1/api-keys/{key_id} | Revoke an API key
-*V1ApiKeysApi* | [**rotateApiKeyV1ApiKeysKeyIdRotatePost**](docs/V1ApiKeysApi.md#rotateApiKeyV1ApiKeysKeyIdRotatePost) | **POST** /v1/api-keys/{key_id}/rotate | Rotate an API key
-*V1ApiKeysApi* | [**whoamiV1WhoamiGet**](docs/V1ApiKeysApi.md#whoamiV1WhoamiGet) | **GET** /v1/whoami | Describe the calling credential
-*V1AuthApi* | [**changePasswordV1AuthPasswordPost**](docs/V1AuthApi.md#changePasswordV1AuthPasswordPost) | **POST** /v1/auth/password | Change the password
-*V1AuthApi* | [**confirmEmailChangeV1AuthEmailConfirmPost**](docs/V1AuthApi.md#confirmEmailChangeV1AuthEmailConfirmPost) | **POST** /v1/auth/email/confirm | Confirm an email address change
-*V1AuthApi* | [**confirmPasswordResetV1AuthPasswordResetConfirmPost**](docs/V1AuthApi.md#confirmPasswordResetV1AuthPasswordResetConfirmPost) | **POST** /v1/auth/password-reset/confirm | Complete a password reset
-*V1AuthApi* | [**deleteAccountV1AuthDeleteAccountPost**](docs/V1AuthApi.md#deleteAccountV1AuthDeleteAccountPost) | **POST** /v1/auth/delete-account | Delete this account and its data, permanently
-*V1AuthApi* | [**googleAuthV1AuthGooglePost**](docs/V1AuthApi.md#googleAuthV1AuthGooglePost) | **POST** /v1/auth/google | Sign in with Google
-*V1AuthApi* | [**listSessionsV1AuthSessionsGet**](docs/V1AuthApi.md#listSessionsV1AuthSessionsGet) | **GET** /v1/auth/sessions | List active sessions
-*V1AuthApi* | [**loginV1AuthLoginPost**](docs/V1AuthApi.md#loginV1AuthLoginPost) | **POST** /v1/auth/login | Sign in
-*V1AuthApi* | [**logoutV1AuthLogoutPost**](docs/V1AuthApi.md#logoutV1AuthLogoutPost) | **POST** /v1/auth/logout | Sign out of the current session
-*V1AuthApi* | [**meV1AuthMeGet**](docs/V1AuthApi.md#meV1AuthMeGet) | **GET** /v1/auth/me | The signed-in user
-*V1AuthApi* | [**refreshV1AuthRefreshPost**](docs/V1AuthApi.md#refreshV1AuthRefreshPost) | **POST** /v1/auth/refresh | Exchange a refresh token
-*V1AuthApi* | [**registerV1AuthRegisterPost**](docs/V1AuthApi.md#registerV1AuthRegisterPost) | **POST** /v1/auth/register | Create an account
-*V1AuthApi* | [**requestEmailChangeV1AuthEmailPost**](docs/V1AuthApi.md#requestEmailChangeV1AuthEmailPost) | **POST** /v1/auth/email | Request an email address change
-*V1AuthApi* | [**requestPasswordResetV1AuthPasswordResetPost**](docs/V1AuthApi.md#requestPasswordResetV1AuthPasswordResetPost) | **POST** /v1/auth/password-reset | Request a password reset link
-*V1AuthApi* | [**resendVerificationV1AuthResendVerificationPost**](docs/V1AuthApi.md#resendVerificationV1AuthResendVerificationPost) | **POST** /v1/auth/resend-verification | Send the confirmation email again
-*V1AuthApi* | [**revokeOtherSessionsV1AuthSessionsDelete**](docs/V1AuthApi.md#revokeOtherSessionsV1AuthSessionsDelete) | **DELETE** /v1/auth/sessions | Revoke every other session
-*V1AuthApi* | [**revokeSessionV1AuthSessionsSessionIdDelete**](docs/V1AuthApi.md#revokeSessionV1AuthSessionsSessionIdDelete) | **DELETE** /v1/auth/sessions/{session_id} | Revoke one session
-*V1AuthApi* | [**verifyEmailV1AuthVerifyEmailPost**](docs/V1AuthApi.md#verifyEmailV1AuthVerifyEmailPost) | **POST** /v1/auth/verify-email | Confirm an email address
-*V1AuthWebApi* | [**webGoogleV1AuthWebGooglePost**](docs/V1AuthWebApi.md#webGoogleV1AuthWebGooglePost) | **POST** /v1/auth/web/google | Browser Google sign-in (cookie)
-*V1AuthWebApi* | [**webLoginV1AuthWebLoginPost**](docs/V1AuthWebApi.md#webLoginV1AuthWebLoginPost) | **POST** /v1/auth/web/login | Browser sign-in (cookie)
-*V1AuthWebApi* | [**webLogoutV1AuthWebLogoutPost**](docs/V1AuthWebApi.md#webLogoutV1AuthWebLogoutPost) | **POST** /v1/auth/web/logout | Browser sign-out (cookie)
-*V1AuthWebApi* | [**webRefreshV1AuthWebRefreshPost**](docs/V1AuthWebApi.md#webRefreshV1AuthWebRefreshPost) | **POST** /v1/auth/web/refresh | Refresh via cookie
-*V1OrgApi* | [**acceptInvitationV1OrgAcceptInvitationPost**](docs/V1OrgApi.md#acceptInvitationV1OrgAcceptInvitationPost) | **POST** /v1/org/accept-invitation | Accept an organization invitation
-*V1OrgApi* | [**cancelInvitationV1OrgInvitationsInvitationIdDelete**](docs/V1OrgApi.md#cancelInvitationV1OrgInvitationsInvitationIdDelete) | **DELETE** /v1/org/invitations/{invitation_id} | Cancel an invitation
-*V1OrgApi* | [**getOrgV1OrgGet**](docs/V1OrgApi.md#getOrgV1OrgGet) | **GET** /v1/org | Get current organization
-*V1OrgApi* | [**inviteMemberV1OrgInvitationsPost**](docs/V1OrgApi.md#inviteMemberV1OrgInvitationsPost) | **POST** /v1/org/invitations | Invite a member
-*V1OrgApi* | [**listInvitationsV1OrgInvitationsGet**](docs/V1OrgApi.md#listInvitationsV1OrgInvitationsGet) | **GET** /v1/org/invitations | List pending invitations
-*V1OrgApi* | [**listMembersV1OrgMembersGet**](docs/V1OrgApi.md#listMembersV1OrgMembersGet) | **GET** /v1/org/members | List organization members
-*V1OrgApi* | [**removeMemberV1OrgMembersUserIdDelete**](docs/V1OrgApi.md#removeMemberV1OrgMembersUserIdDelete) | **DELETE** /v1/org/members/{user_id} | Remove a member
-*V1OrgApi* | [**updateMemberRoleV1OrgMembersUserIdPatch**](docs/V1OrgApi.md#updateMemberRoleV1OrgMembersUserIdPatch) | **PATCH** /v1/org/members/{user_id} | Change a member&#39;s role
-*V1PoliciesApi* | [**acceptPoliciesV1PoliciesAcceptPost**](docs/V1PoliciesApi.md#acceptPoliciesV1PoliciesAcceptPost) | **POST** /v1/policies/accept | Accept the current policies
-*V1PoliciesApi* | [**getCurrentPoliciesV1PoliciesCurrentGet**](docs/V1PoliciesApi.md#getCurrentPoliciesV1PoliciesCurrentGet) | **GET** /v1/policies/current | Current policy versions
-*V1PoliciesApi* | [**getPolicyContentV1PoliciesKindGet**](docs/V1PoliciesApi.md#getPolicyContentV1PoliciesKindGet) | **GET** /v1/policies/{kind} | Policy document content
-*V1SessionsApi* | [**createSessionV1SessionsPost**](docs/V1SessionsApi.md#createSessionV1SessionsPost) | **POST** /v1/sessions | Start a session
-*V1SessionsApi* | [**getSessionV1SessionsSessionIdGet**](docs/V1SessionsApi.md#getSessionV1SessionsSessionIdGet) | **GET** /v1/sessions/{session_id} | Get one session
-*V1SessionsApi* | [**listHistoryV1HistoryGet**](docs/V1SessionsApi.md#listHistoryV1HistoryGet) | **GET** /v1/history | List past sessions
-*V1SessionsApi* | [**stopSessionV1SessionsSessionIdStopPost**](docs/V1SessionsApi.md#stopSessionV1SessionsSessionIdStopPost) | **POST** /v1/sessions/{session_id}/stop | Finalise a session
-*V1SessionsApi* | [**submitFeedbackV1SessionsSessionIdFeedbackPost**](docs/V1SessionsApi.md#submitFeedbackV1SessionsSessionIdFeedbackPost) | **POST** /v1/sessions/{session_id}/feedback | Label a session as scam or not
-*V1SiteApi* | [**confirmSubscriptionV1SiteSubscribeConfirmPost**](docs/V1SiteApi.md#confirmSubscriptionV1SiteSubscribeConfirmPost) | **POST** /v1/site/subscribe/confirm | Confirm a subscription
-*V1SiteApi* | [**contactSalesV1SiteContactSalesPost**](docs/V1SiteApi.md#contactSalesV1SiteContactSalesPost) | **POST** /v1/site/contact-sales | Send a sales inquiry
-*V1SiteApi* | [**subscribeV1SiteSubscribePost**](docs/V1SiteApi.md#subscribeV1SiteSubscribePost) | **POST** /v1/site/subscribe | Subscribe to product updates
-*V1SiteApi* | [**unsubscribeV1SiteUnsubscribePost**](docs/V1SiteApi.md#unsubscribeV1SiteUnsubscribePost) | **POST** /v1/site/unsubscribe | Unsubscribe from product updates
+*V1AccountApi* | [**getAnalytics**](docs/V1AccountApi.md#getAnalytics) | **GET** /v1/analytics | Your organization&#39;s analytics
+*V1AccountApi* | [**getProfile**](docs/V1AccountApi.md#getProfile) | **GET** /v1/user/profile | Your profile
+*V1AccountApi* | [**updateProfile**](docs/V1AccountApi.md#updateProfile) | **PATCH** /v1/user/profile | Update your profile
+*V1AnalysisApi* | [**analyzeAudio**](docs/V1AnalysisApi.md#analyzeAudio) | **POST** /v1/analyze/audio | Transcribe and score an audio clip
+*V1AnalysisApi* | [**analyzeText**](docs/V1AnalysisApi.md#analyzeText) | **POST** /v1/analyze/text | Score a transcript
+*V1ApiKeysApi* | [**createApiKey**](docs/V1ApiKeysApi.md#createApiKey) | **POST** /v1/api-keys | Create an API key
+*V1ApiKeysApi* | [**getApiKey**](docs/V1ApiKeysApi.md#getApiKey) | **GET** /v1/api-keys/{key_id} | Get one API key&#39;s metadata
+*V1ApiKeysApi* | [**listApiKeys**](docs/V1ApiKeysApi.md#listApiKeys) | **GET** /v1/api-keys | List your API keys
+*V1ApiKeysApi* | [**listScopes**](docs/V1ApiKeysApi.md#listScopes) | **GET** /v1/api-keys/scopes | List the available scopes
+*V1ApiKeysApi* | [**revokeApiKey**](docs/V1ApiKeysApi.md#revokeApiKey) | **DELETE** /v1/api-keys/{key_id} | Revoke an API key
+*V1ApiKeysApi* | [**rotateApiKey**](docs/V1ApiKeysApi.md#rotateApiKey) | **POST** /v1/api-keys/{key_id}/rotate | Rotate an API key
+*V1ApiKeysApi* | [**whoami**](docs/V1ApiKeysApi.md#whoami) | **GET** /v1/whoami | Describe the calling credential
+*V1AuthApi* | [**changePassword**](docs/V1AuthApi.md#changePassword) | **POST** /v1/auth/password | Change the password
+*V1AuthApi* | [**confirmEmailChange**](docs/V1AuthApi.md#confirmEmailChange) | **POST** /v1/auth/email/confirm | Confirm an email address change
+*V1AuthApi* | [**confirmPasswordReset**](docs/V1AuthApi.md#confirmPasswordReset) | **POST** /v1/auth/password-reset/confirm | Complete a password reset
+*V1AuthApi* | [**deleteAccount**](docs/V1AuthApi.md#deleteAccount) | **POST** /v1/auth/delete-account | Delete this account and its data, permanently
+*V1AuthApi* | [**googleAuth**](docs/V1AuthApi.md#googleAuth) | **POST** /v1/auth/google | Sign in with Google
+*V1AuthApi* | [**listSessions**](docs/V1AuthApi.md#listSessions) | **GET** /v1/auth/sessions | List active sessions
+*V1AuthApi* | [**login**](docs/V1AuthApi.md#login) | **POST** /v1/auth/login | Sign in
+*V1AuthApi* | [**logout**](docs/V1AuthApi.md#logout) | **POST** /v1/auth/logout | Sign out of the current session
+*V1AuthApi* | [**me**](docs/V1AuthApi.md#me) | **GET** /v1/auth/me | The signed-in user
+*V1AuthApi* | [**refresh**](docs/V1AuthApi.md#refresh) | **POST** /v1/auth/refresh | Exchange a refresh token
+*V1AuthApi* | [**register**](docs/V1AuthApi.md#register) | **POST** /v1/auth/register | Create an account
+*V1AuthApi* | [**requestEmailChange**](docs/V1AuthApi.md#requestEmailChange) | **POST** /v1/auth/email | Request an email address change
+*V1AuthApi* | [**requestPasswordReset**](docs/V1AuthApi.md#requestPasswordReset) | **POST** /v1/auth/password-reset | Request a password reset link
+*V1AuthApi* | [**resendVerification**](docs/V1AuthApi.md#resendVerification) | **POST** /v1/auth/resend-verification | Send the confirmation email again
+*V1AuthApi* | [**revokeOtherSessions**](docs/V1AuthApi.md#revokeOtherSessions) | **DELETE** /v1/auth/sessions | Revoke every other session
+*V1AuthApi* | [**revokeSession**](docs/V1AuthApi.md#revokeSession) | **DELETE** /v1/auth/sessions/{session_id} | Revoke one session
+*V1AuthApi* | [**verifyEmail**](docs/V1AuthApi.md#verifyEmail) | **POST** /v1/auth/verify-email | Confirm an email address
+*V1AuthWebApi* | [**webGoogle**](docs/V1AuthWebApi.md#webGoogle) | **POST** /v1/auth/web/google | Browser Google sign-in (cookie)
+*V1AuthWebApi* | [**webLogin**](docs/V1AuthWebApi.md#webLogin) | **POST** /v1/auth/web/login | Browser sign-in (cookie)
+*V1AuthWebApi* | [**webLogout**](docs/V1AuthWebApi.md#webLogout) | **POST** /v1/auth/web/logout | Browser sign-out (cookie)
+*V1AuthWebApi* | [**webRefresh**](docs/V1AuthWebApi.md#webRefresh) | **POST** /v1/auth/web/refresh | Refresh via cookie
+*V1OrgApi* | [**acceptInvitation**](docs/V1OrgApi.md#acceptInvitation) | **POST** /v1/org/accept-invitation | Accept an organization invitation
+*V1OrgApi* | [**cancelInvitation**](docs/V1OrgApi.md#cancelInvitation) | **DELETE** /v1/org/invitations/{invitation_id} | Cancel an invitation
+*V1OrgApi* | [**getOrg**](docs/V1OrgApi.md#getOrg) | **GET** /v1/org | Get current organization
+*V1OrgApi* | [**inviteMember**](docs/V1OrgApi.md#inviteMember) | **POST** /v1/org/invitations | Invite a member
+*V1OrgApi* | [**listInvitations**](docs/V1OrgApi.md#listInvitations) | **GET** /v1/org/invitations | List pending invitations
+*V1OrgApi* | [**listMembers**](docs/V1OrgApi.md#listMembers) | **GET** /v1/org/members | List organization members
+*V1OrgApi* | [**removeMember**](docs/V1OrgApi.md#removeMember) | **DELETE** /v1/org/members/{user_id} | Remove a member
+*V1OrgApi* | [**updateMemberRole**](docs/V1OrgApi.md#updateMemberRole) | **PATCH** /v1/org/members/{user_id} | Change a member&#39;s role
+*V1PoliciesApi* | [**acceptPolicies**](docs/V1PoliciesApi.md#acceptPolicies) | **POST** /v1/policies/accept | Accept the current policies
+*V1PoliciesApi* | [**getCurrentPolicies**](docs/V1PoliciesApi.md#getCurrentPolicies) | **GET** /v1/policies/current | Current policy versions
+*V1PoliciesApi* | [**getPolicyContent**](docs/V1PoliciesApi.md#getPolicyContent) | **GET** /v1/policies/{kind} | Policy document content
+*V1SessionsApi* | [**createSession**](docs/V1SessionsApi.md#createSession) | **POST** /v1/sessions | Start a session
+*V1SessionsApi* | [**getSession**](docs/V1SessionsApi.md#getSession) | **GET** /v1/sessions/{session_id} | Get one session
+*V1SessionsApi* | [**listHistory**](docs/V1SessionsApi.md#listHistory) | **GET** /v1/history | List past sessions
+*V1SessionsApi* | [**stopSession**](docs/V1SessionsApi.md#stopSession) | **POST** /v1/sessions/{session_id}/stop | Finalise a session
+*V1SessionsApi* | [**submitFeedback**](docs/V1SessionsApi.md#submitFeedback) | **POST** /v1/sessions/{session_id}/feedback | Label a session as scam or not
+*V1SiteApi* | [**confirmSubscription**](docs/V1SiteApi.md#confirmSubscription) | **POST** /v1/site/subscribe/confirm | Confirm a subscription
+*V1SiteApi* | [**contactSales**](docs/V1SiteApi.md#contactSales) | **POST** /v1/site/contact-sales | Send a sales inquiry
+*V1SiteApi* | [**subscribe**](docs/V1SiteApi.md#subscribe) | **POST** /v1/site/subscribe | Subscribe to product updates
+*V1SiteApi* | [**unsubscribe**](docs/V1SiteApi.md#unsubscribe) | **POST** /v1/site/unsubscribe | Unsubscribe from product updates
 
 
 ## Documentation for Models

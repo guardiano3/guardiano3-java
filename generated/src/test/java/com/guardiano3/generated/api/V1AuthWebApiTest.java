@@ -40,9 +40,9 @@ public class V1AuthWebApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void webGoogleV1AuthWebGooglePostTest() throws ApiException {
+    public void webGoogleTest() throws ApiException {
         GoogleAuthRequest googleAuthRequest = null;
-        WebSessionResponse response = api.webGoogleV1AuthWebGooglePost(googleAuthRequest);
+        WebSessionResponse response = api.webGoogle(googleAuthRequest);
         // TODO: test validations
     }
 
@@ -52,9 +52,9 @@ public class V1AuthWebApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void webLoginV1AuthWebLoginPostTest() throws ApiException {
+    public void webLoginTest() throws ApiException {
         LoginRequest loginRequest = null;
-        WebSessionResponse response = api.webLoginV1AuthWebLoginPost(loginRequest);
+        WebSessionResponse response = api.webLogin(loginRequest);
         // TODO: test validations
     }
 
@@ -64,8 +64,8 @@ public class V1AuthWebApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void webLogoutV1AuthWebLogoutPostTest() throws ApiException {
-        api.webLogoutV1AuthWebLogoutPost();
+    public void webLogoutTest() throws ApiException {
+        api.webLogout();
         // TODO: test validations
     }
 
@@ -75,8 +75,8 @@ public class V1AuthWebApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void webRefreshV1AuthWebRefreshPostTest() throws ApiException {
-        WebSessionResponse response = api.webRefreshV1AuthWebRefreshPost();
+    public void webRefreshTest() throws ApiException {
+        WebSessionResponse response = api.webRefresh();
         // TODO: test validations
     }
 

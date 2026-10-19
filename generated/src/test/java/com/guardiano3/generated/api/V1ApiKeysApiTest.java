@@ -46,9 +46,9 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void createApiKeyV1ApiKeysPostTest() throws ApiException {
+    public void createApiKeyTest() throws ApiException {
         ApiKeyCreateRequest apiKeyCreateRequest = null;
-        ApiKeyCreatedResponse response = api.createApiKeyV1ApiKeysPost(apiKeyCreateRequest);
+        ApiKeyCreatedResponse response = api.createApiKey(apiKeyCreateRequest);
         // TODO: test validations
     }
 
@@ -58,9 +58,9 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getApiKeyV1ApiKeysKeyIdGetTest() throws ApiException {
+    public void getApiKeyTest() throws ApiException {
         String keyId = null;
-        ApiKeyResponse response = api.getApiKeyV1ApiKeysKeyIdGet(keyId);
+        ApiKeyResponse response = api.getApiKey(keyId);
         // TODO: test validations
     }
 
@@ -72,9 +72,9 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listApiKeysV1ApiKeysGetTest() throws ApiException {
+    public void listApiKeysTest() throws ApiException {
         Boolean includeRevoked = null;
-        ApiKeyListResponse response = api.listApiKeysV1ApiKeysGet(includeRevoked);
+        ApiKeyListResponse response = api.listApiKeys(includeRevoked);
         // TODO: test validations
     }
 
@@ -86,8 +86,8 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void listScopesV1ApiKeysScopesGetTest() throws ApiException {
-        ScopeListResponse response = api.listScopesV1ApiKeysScopesGet();
+    public void listScopesTest() throws ApiException {
+        ScopeListResponse response = api.listScopes();
         // TODO: test validations
     }
 
@@ -99,9 +99,9 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void revokeApiKeyV1ApiKeysKeyIdDeleteTest() throws ApiException {
+    public void revokeApiKeyTest() throws ApiException {
         String keyId = null;
-        api.revokeApiKeyV1ApiKeysKeyIdDelete(keyId);
+        api.revokeApiKey(keyId);
         // TODO: test validations
     }
 
@@ -113,10 +113,10 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void rotateApiKeyV1ApiKeysKeyIdRotatePostTest() throws ApiException {
+    public void rotateApiKeyTest() throws ApiException {
         String keyId = null;
         ApiKeyRotateRequest apiKeyRotateRequest = null;
-        ApiKeyCreatedResponse response = api.rotateApiKeyV1ApiKeysKeyIdRotatePost(keyId, apiKeyRotateRequest);
+        ApiKeyCreatedResponse response = api.rotateApiKey(keyId, apiKeyRotateRequest);
         // TODO: test validations
     }
 
@@ -128,8 +128,8 @@ public class V1ApiKeysApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void whoamiV1WhoamiGetTest() throws ApiException {
-        WhoAmIResponse response = api.whoamiV1WhoamiGet();
+    public void whoamiTest() throws ApiException {
+        WhoAmIResponse response = api.whoami();
         // TODO: test validations
     }
 

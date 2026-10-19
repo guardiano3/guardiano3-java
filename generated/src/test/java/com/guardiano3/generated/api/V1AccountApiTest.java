@@ -42,10 +42,10 @@ public class V1AccountApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getAnalyticsV1AnalyticsGetTest() throws ApiException {
+    public void getAnalyticsTest() throws ApiException {
         String window = null;
         String environment = null;
-        AnalyticsResponse response = api.getAnalyticsV1AnalyticsGet(window, environment);
+        AnalyticsResponse response = api.getAnalytics(window, environment);
         // TODO: test validations
     }
 
@@ -55,8 +55,8 @@ public class V1AccountApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void getProfileV1UserProfileGetTest() throws ApiException {
-        ProfileResponse response = api.getProfileV1UserProfileGet();
+    public void getProfileTest() throws ApiException {
+        ProfileResponse response = api.getProfile();
         // TODO: test validations
     }
 
@@ -66,9 +66,9 @@ public class V1AccountApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void updateProfileV1UserProfilePatchTest() throws ApiException {
+    public void updateProfileTest() throws ApiException {
         ProfileUpdateRequest profileUpdateRequest = null;
-        ProfileResponse response = api.updateProfileV1UserProfilePatch(profileUpdateRequest);
+        ProfileResponse response = api.updateProfile(profileUpdateRequest);
         // TODO: test validations
     }
 

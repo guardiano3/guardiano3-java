@@ -77,7 +77,7 @@ public class V1PoliciesApi {
     }
 
     /**
-     * Build call for acceptPoliciesV1PoliciesAcceptPost
+     * Build call for acceptPolicies
      * @param policyAcceptRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -96,7 +96,7 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acceptPoliciesV1PoliciesAcceptPostCall(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call acceptPoliciesCall(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,13 +142,13 @@ public class V1PoliciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call acceptPoliciesV1PoliciesAcceptPostValidateBeforeCall(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call acceptPoliciesValidateBeforeCall(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'policyAcceptRequest' is set
         if (policyAcceptRequest == null) {
-            throw new ApiException("Missing the required parameter 'policyAcceptRequest' when calling acceptPoliciesV1PoliciesAcceptPost(Async)");
+            throw new ApiException("Missing the required parameter 'policyAcceptRequest' when calling acceptPolicies(Async)");
         }
 
-        return acceptPoliciesV1PoliciesAcceptPostCall(policyAcceptRequest, _callback);
+        return acceptPoliciesCall(policyAcceptRequest, _callback);
 
     }
 
@@ -172,8 +172,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public PoliciesAcceptedResponse acceptPoliciesV1PoliciesAcceptPost(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest) throws ApiException {
-        ApiResponse<PoliciesAcceptedResponse> localVarResp = acceptPoliciesV1PoliciesAcceptPostWithHttpInfo(policyAcceptRequest);
+    public PoliciesAcceptedResponse acceptPolicies(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest) throws ApiException {
+        ApiResponse<PoliciesAcceptedResponse> localVarResp = acceptPoliciesWithHttpInfo(policyAcceptRequest);
         return localVarResp.getData();
     }
 
@@ -197,8 +197,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PoliciesAcceptedResponse> acceptPoliciesV1PoliciesAcceptPostWithHttpInfo(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest) throws ApiException {
-        okhttp3.Call localVarCall = acceptPoliciesV1PoliciesAcceptPostValidateBeforeCall(policyAcceptRequest, null);
+    public ApiResponse<PoliciesAcceptedResponse> acceptPoliciesWithHttpInfo(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest) throws ApiException {
+        okhttp3.Call localVarCall = acceptPoliciesValidateBeforeCall(policyAcceptRequest, null);
         Type localVarReturnType = new TypeToken<PoliciesAcceptedResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -224,15 +224,15 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acceptPoliciesV1PoliciesAcceptPostAsync(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback<PoliciesAcceptedResponse> _callback) throws ApiException {
+    public okhttp3.Call acceptPoliciesAsync(@javax.annotation.Nonnull PolicyAcceptRequest policyAcceptRequest, final ApiCallback<PoliciesAcceptedResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = acceptPoliciesV1PoliciesAcceptPostValidateBeforeCall(policyAcceptRequest, _callback);
+        okhttp3.Call localVarCall = acceptPoliciesValidateBeforeCall(policyAcceptRequest, _callback);
         Type localVarReturnType = new TypeToken<PoliciesAcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getCurrentPoliciesV1PoliciesCurrentGet
+     * Build call for getCurrentPolicies
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -250,7 +250,7 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCurrentPoliciesV1PoliciesCurrentGetCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCurrentPoliciesCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -295,8 +295,8 @@ public class V1PoliciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCurrentPoliciesV1PoliciesCurrentGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return getCurrentPoliciesV1PoliciesCurrentGetCall(_callback);
+    private okhttp3.Call getCurrentPoliciesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getCurrentPoliciesCall(_callback);
 
     }
 
@@ -319,8 +319,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public PoliciesCurrentResponse getCurrentPoliciesV1PoliciesCurrentGet() throws ApiException {
-        ApiResponse<PoliciesCurrentResponse> localVarResp = getCurrentPoliciesV1PoliciesCurrentGetWithHttpInfo();
+    public PoliciesCurrentResponse getCurrentPolicies() throws ApiException {
+        ApiResponse<PoliciesCurrentResponse> localVarResp = getCurrentPoliciesWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -343,8 +343,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PoliciesCurrentResponse> getCurrentPoliciesV1PoliciesCurrentGetWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getCurrentPoliciesV1PoliciesCurrentGetValidateBeforeCall(null);
+    public ApiResponse<PoliciesCurrentResponse> getCurrentPoliciesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getCurrentPoliciesValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<PoliciesCurrentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -369,15 +369,15 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCurrentPoliciesV1PoliciesCurrentGetAsync(final ApiCallback<PoliciesCurrentResponse> _callback) throws ApiException {
+    public okhttp3.Call getCurrentPoliciesAsync(final ApiCallback<PoliciesCurrentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCurrentPoliciesV1PoliciesCurrentGetValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getCurrentPoliciesValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<PoliciesCurrentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getPolicyContentV1PoliciesKindGet
+     * Build call for getPolicyContent
      * @param kind  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -397,7 +397,7 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPolicyContentV1PoliciesKindGetCall(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPolicyContentCall(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -444,13 +444,13 @@ public class V1PoliciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPolicyContentV1PoliciesKindGetValidateBeforeCall(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPolicyContentValidateBeforeCall(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'kind' is set
         if (kind == null) {
-            throw new ApiException("Missing the required parameter 'kind' when calling getPolicyContentV1PoliciesKindGet(Async)");
+            throw new ApiException("Missing the required parameter 'kind' when calling getPolicyContent(Async)");
         }
 
-        return getPolicyContentV1PoliciesKindGetCall(kind, _callback);
+        return getPolicyContentCall(kind, _callback);
 
     }
 
@@ -475,8 +475,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public String getPolicyContentV1PoliciesKindGet(@javax.annotation.Nonnull PolicyKind kind) throws ApiException {
-        ApiResponse<String> localVarResp = getPolicyContentV1PoliciesKindGetWithHttpInfo(kind);
+    public String getPolicyContent(@javax.annotation.Nonnull PolicyKind kind) throws ApiException {
+        ApiResponse<String> localVarResp = getPolicyContentWithHttpInfo(kind);
         return localVarResp.getData();
     }
 
@@ -501,8 +501,8 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> getPolicyContentV1PoliciesKindGetWithHttpInfo(@javax.annotation.Nonnull PolicyKind kind) throws ApiException {
-        okhttp3.Call localVarCall = getPolicyContentV1PoliciesKindGetValidateBeforeCall(kind, null);
+    public ApiResponse<String> getPolicyContentWithHttpInfo(@javax.annotation.Nonnull PolicyKind kind) throws ApiException {
+        okhttp3.Call localVarCall = getPolicyContentValidateBeforeCall(kind, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -529,9 +529,9 @@ public class V1PoliciesApi {
         <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPolicyContentV1PoliciesKindGetAsync(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call getPolicyContentAsync(@javax.annotation.Nonnull PolicyKind kind, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getPolicyContentV1PoliciesKindGetValidateBeforeCall(kind, _callback);
+        okhttp3.Call localVarCall = getPolicyContentValidateBeforeCall(kind, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
