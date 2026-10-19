@@ -1,6 +1,6 @@
 /*
  * GuardianO3 API
- * Real-time scam detection for phone calls.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live-call channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
+ * Real-time scam detection for audio and text.  Authenticate with a user access token or an API key; both are sent as `Authorization: Bearer <value>` and are distinguished by the `go3_` key prefix.  Errors share one envelope -- branch on `error.code`, never on `error.message`. Every response carries `X-Request-Id`; quote it in bug reports.  **Live session channels** (`/v1/sessions/{session_id}/audio` and `/v1/sessions/{session_id}/stream`) use WebSocket, not HTTP. They are not listed under `paths` because OpenAPI 3.x has no first-class WebSocket support; their frame shapes and close codes are declared in the `x-websockets` extension at the top level of this document.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@guardiano3.com
@@ -53,7 +53,7 @@ import com.guardiano3.generated.JSON;
 public class SessionCreateRequest {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String direction;
 
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
@@ -63,13 +63,13 @@ public class SessionCreateRequest {
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String phoneNumber;
 
   public SessionCreateRequest() {
   }
 
-  public SessionCreateRequest direction(@javax.annotation.Nonnull String direction) {
+  public SessionCreateRequest direction(@javax.annotation.Nullable String direction) {
     this.direction = direction;
     return this;
   }
@@ -78,12 +78,12 @@ public class SessionCreateRequest {
    * Get direction
    * @return direction
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDirection() {
     return direction;
   }
 
-  public void setDirection(@javax.annotation.Nonnull String direction) {
+  public void setDirection(@javax.annotation.Nullable String direction) {
     this.direction = direction;
   }
 
@@ -107,7 +107,7 @@ public class SessionCreateRequest {
   }
 
 
-  public SessionCreateRequest phoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public SessionCreateRequest phoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -116,12 +116,12 @@ public class SessionCreateRequest {
    * Get phoneNumber
    * @return phoneNumber
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
@@ -188,7 +188,7 @@ public class SessionCreateRequest {
     openapiFields = new HashSet<String>(Arrays.asList("direction", "language", "phoneNumber"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("direction", "phoneNumber"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -211,21 +211,14 @@ public class SessionCreateRequest {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SessionCreateRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : SessionCreateRequest.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("direction").isJsonPrimitive()) {
+      if ((jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonNull()) && !jsonObj.get("direction").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `direction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("direction").toString()));
       }
       if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));
       }
-      if (!jsonObj.get("phoneNumber").isJsonPrimitive()) {
+      if ((jsonObj.get("phoneNumber") != null && !jsonObj.get("phoneNumber").isJsonNull()) && !jsonObj.get("phoneNumber").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `phoneNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phoneNumber").toString()));
       }
   }
