@@ -17,6 +17,7 @@ import com.guardiano3.generated.ApiException;
 import com.guardiano3.generated.model.ContactSalesRequest;
 import com.guardiano3.generated.model.Error;
 import com.guardiano3.generated.model.SiteAcceptedResponse;
+import com.guardiano3.generated.model.SiteFeedbackRequest;
 import com.guardiano3.generated.model.SubscribeRequest;
 import com.guardiano3.generated.model.SubscriptionStatusResponse;
 import com.guardiano3.generated.model.SubscriptionTokenRequest;
@@ -61,6 +62,20 @@ public class V1SiteApiTest {
     public void contactSalesTest() throws ApiException {
         ContactSalesRequest contactSalesRequest = null;
         SiteAcceptedResponse response = api.contactSales(contactSalesRequest);
+        // TODO: test validations
+    }
+
+    /**
+     * Send feedback
+     *
+     * Stores the feedback and forwards it to the support inbox, with Reply-To set to the sender when they give an email address. Nothing is emailed to the sender.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void feedbackTest() throws ApiException {
+        SiteFeedbackRequest siteFeedbackRequest = null;
+        SiteAcceptedResponse response = api.feedback(siteFeedbackRequest);
         // TODO: test validations
     }
 

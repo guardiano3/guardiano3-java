@@ -177,6 +177,7 @@ Class | Method | HTTP request | Description
 *V1SessionsApi* | [**submitFeedback**](docs/V1SessionsApi.md#submitFeedback) | **POST** /v1/sessions/{session_id}/feedback | Label a session as scam or not
 *V1SiteApi* | [**confirmSubscription**](docs/V1SiteApi.md#confirmSubscription) | **POST** /v1/site/subscribe/confirm | Confirm a subscription
 *V1SiteApi* | [**contactSales**](docs/V1SiteApi.md#contactSales) | **POST** /v1/site/contact-sales | Send a sales inquiry
+*V1SiteApi* | [**feedback**](docs/V1SiteApi.md#feedback) | **POST** /v1/site/feedback | Send feedback
 *V1SiteApi* | [**subscribe**](docs/V1SiteApi.md#subscribe) | **POST** /v1/site/subscribe | Subscribe to product updates
 *V1SiteApi* | [**unsubscribe**](docs/V1SiteApi.md#unsubscribe) | **POST** /v1/site/unsubscribe | Unsubscribe from product updates
 
@@ -249,6 +250,7 @@ Class | Method | HTTP request | Description
  - [SessionListResponse](docs/SessionListResponse.md)
  - [SessionResponse](docs/SessionResponse.md)
  - [SiteAcceptedResponse](docs/SiteAcceptedResponse.md)
+ - [SiteFeedbackRequest](docs/SiteFeedbackRequest.md)
  - [SubscribeRequest](docs/SubscribeRequest.md)
  - [SubscriptionStatusResponse](docs/SubscriptionStatusResponse.md)
  - [SubscriptionTokenRequest](docs/SubscriptionTokenRequest.md)

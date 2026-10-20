@@ -158,6 +158,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SessionListResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SessionResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SiteAcceptedResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SiteFeedbackRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SubscribeRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SubscriptionStatusResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.guardiano3.generated.model.SubscriptionTokenRequest.CustomTypeAdapterFactory());

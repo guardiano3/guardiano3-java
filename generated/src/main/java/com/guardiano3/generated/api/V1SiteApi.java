@@ -30,6 +30,7 @@ import java.io.IOException;
 import com.guardiano3.generated.model.ContactSalesRequest;
 import com.guardiano3.generated.model.Error;
 import com.guardiano3.generated.model.SiteAcceptedResponse;
+import com.guardiano3.generated.model.SiteFeedbackRequest;
 import com.guardiano3.generated.model.SubscribeRequest;
 import com.guardiano3.generated.model.SubscriptionStatusResponse;
 import com.guardiano3.generated.model.SubscriptionTokenRequest;
@@ -383,6 +384,161 @@ public class V1SiteApi {
     public okhttp3.Call contactSalesAsync(@javax.annotation.Nonnull ContactSalesRequest contactSalesRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = contactSalesValidateBeforeCall(contactSalesRequest, _callback);
+        Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for feedback
+     * @param siteFeedbackRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request was well-formed but rejected -- an expired or already-used token, or a value the schema cannot constrain. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Authentication is missing, invalid, or revoked. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Authenticated, but not permitted (role, scope, or environment). </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A state conflict -- the resource already exists, or an Idempotency-Key was reused with a different body. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The request failed validation. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limit or quota exceeded. See Retry-After. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call feedbackCall(@javax.annotation.Nonnull SiteFeedbackRequest siteFeedbackRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = siteFeedbackRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/site/feedback";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call feedbackValidateBeforeCall(@javax.annotation.Nonnull SiteFeedbackRequest siteFeedbackRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'siteFeedbackRequest' is set
+        if (siteFeedbackRequest == null) {
+            throw new ApiException("Missing the required parameter 'siteFeedbackRequest' when calling feedback(Async)");
+        }
+
+        return feedbackCall(siteFeedbackRequest, _callback);
+
+    }
+
+    /**
+     * Send feedback
+     * Stores the feedback and forwards it to the support inbox, with Reply-To set to the sender when they give an email address. Nothing is emailed to the sender.
+     * @param siteFeedbackRequest  (required)
+     * @return SiteAcceptedResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request was well-formed but rejected -- an expired or already-used token, or a value the schema cannot constrain. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Authentication is missing, invalid, or revoked. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Authenticated, but not permitted (role, scope, or environment). </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A state conflict -- the resource already exists, or an Idempotency-Key was reused with a different body. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The request failed validation. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limit or quota exceeded. See Retry-After. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
+     </table>
+     */
+    public SiteAcceptedResponse feedback(@javax.annotation.Nonnull SiteFeedbackRequest siteFeedbackRequest) throws ApiException {
+        ApiResponse<SiteAcceptedResponse> localVarResp = feedbackWithHttpInfo(siteFeedbackRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Send feedback
+     * Stores the feedback and forwards it to the support inbox, with Reply-To set to the sender when they give an email address. Nothing is emailed to the sender.
+     * @param siteFeedbackRequest  (required)
+     * @return ApiResponse&lt;SiteAcceptedResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request was well-formed but rejected -- an expired or already-used token, or a value the schema cannot constrain. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Authentication is missing, invalid, or revoked. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Authenticated, but not permitted (role, scope, or environment). </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A state conflict -- the resource already exists, or an Idempotency-Key was reused with a different body. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The request failed validation. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limit or quota exceeded. See Retry-After. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SiteAcceptedResponse> feedbackWithHttpInfo(@javax.annotation.Nonnull SiteFeedbackRequest siteFeedbackRequest) throws ApiException {
+        okhttp3.Call localVarCall = feedbackValidateBeforeCall(siteFeedbackRequest, null);
+        Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Send feedback (asynchronously)
+     * Stores the feedback and forwards it to the support inbox, with Reply-To set to the sender when they give an email address. Nothing is emailed to the sender.
+     * @param siteFeedbackRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The request was well-formed but rejected -- an expired or already-used token, or a value the schema cannot constrain. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Authentication is missing, invalid, or revoked. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Authenticated, but not permitted (role, scope, or environment). </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A state conflict -- the resource already exists, or an Idempotency-Key was reused with a different body. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The request failed validation. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limit or quota exceeded. See Retry-After. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Unexpected server error. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call feedbackAsync(@javax.annotation.Nonnull SiteFeedbackRequest siteFeedbackRequest, final ApiCallback<SiteAcceptedResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = feedbackValidateBeforeCall(siteFeedbackRequest, _callback);
         Type localVarReturnType = new TypeToken<SiteAcceptedResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

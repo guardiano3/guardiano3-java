@@ -95,6 +95,7 @@ src/main/java/com/guardiano3/generated/model/SessionCreatedResponse.java
 src/main/java/com/guardiano3/generated/model/SessionListResponse.java
 src/main/java/com/guardiano3/generated/model/SessionResponse.java
 src/main/java/com/guardiano3/generated/model/SiteAcceptedResponse.java
+src/main/java/com/guardiano3/generated/model/SiteFeedbackRequest.java
 src/main/java/com/guardiano3/generated/model/SubscribeRequest.java
 src/main/java/com/guardiano3/generated/model/SubscriptionStatusResponse.java
 src/main/java/com/guardiano3/generated/model/SubscriptionTokenRequest.java
@@ -185,6 +186,7 @@ src/test/java/com/guardiano3/generated/model/SessionCreatedResponseTest.java
 src/test/java/com/guardiano3/generated/model/SessionListResponseTest.java
 src/test/java/com/guardiano3/generated/model/SessionResponseTest.java
 src/test/java/com/guardiano3/generated/model/SiteAcceptedResponseTest.java
+src/test/java/com/guardiano3/generated/model/SiteFeedbackRequestTest.java
 src/test/java/com/guardiano3/generated/model/SubscribeRequestTest.java
 src/test/java/com/guardiano3/generated/model/SubscriptionStatusResponseTest.java
 src/test/java/com/guardiano3/generated/model/SubscriptionTokenRequestTest.java

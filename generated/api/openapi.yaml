@@ -3344,6 +3344,77 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /v1/site/feedback:
+    post:
+      description: "Stores the feedback and forwards it to the support inbox, with\
+        \ Reply-To set to the sender when they give an email address. Nothing is emailed\
+        \ to the sender."
+      operationId: feedback
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SiteFeedbackRequest"
+        required: true
+      responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SiteAcceptedResponse"
+          description: Successful Response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: "The request was well-formed but rejected -- an expired or\
+            \ already-used token, or a value the schema cannot constrain."
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: "Authentication is missing, invalid, or revoked."
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: "Authenticated, but not permitted (role, scope, or environment)."
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: "A state conflict -- the resource already exists, or an Idempotency-Key\
+            \ was reused with a different body."
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: The request failed validation.
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Rate limit or quota exceeded. See Retry-After.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Unexpected server error.
+      security: []
+      summary: Send feedback
+      tags:
+      - v1-site
+      x-audience: console
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /v1/site/subscribe:
     post:
       description: "Starts double opt-in: sends a confirmation link and adds nothing\
@@ -5441,6 +5512,54 @@ components:
       required:
       - message
       title: SiteAcceptedResponse
+    SiteFeedbackRequest:
+      example:
+        website: website
+        name: name
+        rating: 1
+        page: page
+        category: bug
+        message: message
+        email: email
+      properties:
+        category:
+          enum:
+          - bug
+          - idea
+          - question
+          - other
+          title: Category
+          type: string
+        email:
+          format: email
+          nullable: true
+          type: string
+        message:
+          maxLength: 4000
+          minLength: 1
+          title: Message
+          type: string
+        name:
+          maxLength: 120
+          nullable: true
+          type: string
+        page:
+          maxLength: 300
+          nullable: true
+          type: string
+        rating:
+          maximum: 5.0
+          minimum: 1.0
+          nullable: true
+          type: integer
+        website:
+          maxLength: 200
+          nullable: true
+          type: string
+      required:
+      - category
+      - message
+      title: SiteFeedbackRequest
     SubscribeRequest:
       example:
         website: website
